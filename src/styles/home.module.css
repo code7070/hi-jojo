@@ -1,0 +1,104 @@
+.home {
+  @apply relative p-6 mt-8;
+}
+
+.homeInner {
+  @apply relative items-start xl:flex max-w-md md:max-w-screen-md xl:max-w-screen-xl;
+}
+
+@keyframes tight {
+  from {
+    @apply leading-none;
+  }
+  to {
+    @apply leading-tight;
+  }
+}
+
+.headingLine1 {
+  @apply leading-none;
+  animation: tight 0.25s linear 0.5s 1 forwards;
+}
+.headingLine2 {
+  @apply leading-none;
+  animation: tight 0.25s linear 0.75s 1 forwards;
+}
+.headingLine3 {
+  @apply leading-none;
+  animation: tight 0.25s linear 1s 1 forwards;
+}
+
+@keyframes undershow {
+  from {
+    @apply w-0;
+  }
+  to {
+    @apply w-[87%];
+  }
+}
+
+.underline1,
+.underline2 {
+  @apply relative inline-block;
+}
+
+.underline1::after,
+.underline2::after {
+  @apply absolute left-0 bottom-1 h-[3px] w-0 bg-neutral;
+  content: "";
+}
+
+.underline1::after {
+  animation: undershow 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 1.5s 1 forwards;
+}
+
+.underline2::after {
+  animation: undershow 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 2s 1 forwards;
+}
+
+.homeGrid {
+  @apply flex-1 mb-12 lg:mb-0;
+}
+
+.homeCardGrid {
+  @apply flex-1;
+}
+
+.homeCard {
+  @apply relative mb-3 rounded-2xl overflow-hidden w-[90%] xl:w-[312px] mx-auto;
+}
+
+.homeCard.left {
+  @apply mx-auto md:mr-2 xl:mx-auto;
+}
+
+.homeCard.right {
+  @apply mx-auto md:ml-2 xl:mx-auto;
+}
+
+.projectItem {
+  @apply relative py-3 px-6 hover:text-white font-semibold;
+}
+
+.projectItem .borders {
+  @apply h-px bg-primary w-[85%] absolute left-[50%] bottom-0 -translate-x-[50%] transition-all duration-200;
+}
+
+@keyframes wider {
+  0% {
+    @apply h-px w-[85%];
+  }
+  25% {
+    @apply h-full w-[85%];
+  }
+  75% {
+    @apply h-full w-full;
+  }
+  100% {
+    @apply h-full w-full;
+  }
+}
+
+.projectItem:hover .borders {
+  animation: wider 0.3s linear 1 forwards;
+}

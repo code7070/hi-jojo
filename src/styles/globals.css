@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  /* overflow-x: hidden; */
+}
+
+.container {
+  @apply relative max-w-7xl mx-auto;
+}
+
+.content-wrapper {
+  @apply px-6;
+}
+
+.headerPage {
+  @apply text-4xl sm:text-5xl lg:text-6xl font-bold transition-all;
+}
+
+.projectTitle {
+  @apply text-4xl lg:text-5xl font-bold transition-all;
+}
+
+.projectDesc {
+  @apply text-lg font-medium mt-6;
+}

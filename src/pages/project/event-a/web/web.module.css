@@ -1,0 +1,16 @@
+.wrapper {
+  @apply relative w-full h-full py-4 px-2;
+  background: url("/project/red-pattern.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.whiter {
+  @apply relative lg:m-3 rounded-xl bg-white overflow-y-auto overflow-x-hidden max-w-full;
+  height: calc(100% - 16px);
+}
+
+.header {
+  @apply flex justify-between items-center p-2;
+}
