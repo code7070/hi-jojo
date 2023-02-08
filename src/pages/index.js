@@ -26,7 +26,7 @@ export default function Home({ projectList }) {
               <div className={styles.headingLine3}>build your own.</div>
             </div>
             <div className="mt-4 text-md lg:text-lg max-w-md transition-all hidden xl:block">
-              Hi! I'm a frontend developer who try to help and collaborate to
+              Hi! Im a frontend developer who try to help and collaborate to
               create awe-some-thing.
             </div>
           </div>
