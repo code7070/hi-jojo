@@ -10,7 +10,7 @@ export default function HomeRight() {
       <div className="md:flex xl:gap-3 flex-wrap items-start justify-center xl:justify-end mt-14 xl:mt-0">
         <div className={style.homeCardGrid}>
           <CardProfile />
-          <CardProject projectList={projectList} />
+          <CardProject />
         </div>
         <div className={`${style.homeCardGrid} mt-10 xl:mt-0`}>
           <CardExperience />
