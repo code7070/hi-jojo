@@ -3,7 +3,7 @@ import styles from "@styles/home.module.css";
 import HomeRight from "src/sections/homepage/home-right";
 
 export async function getStaticProps() {
-  let baseUrl = "http://localhost:3000";
+  let baseUrl = process.env.base_url;
   const projectList = await (await fetch(`${baseUrl}/api/project-list`)).json();
 
   return { props: { projectList } };
