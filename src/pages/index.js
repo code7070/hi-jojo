@@ -2,14 +2,7 @@ import PageHead from "./PageHead";
 import styles from "@styles/home.module.css";
 import HomeRight from "src/sections/homepage/home-right";
 
-export async function getStaticProps() {
-  let baseUrl = process.env.base_url;
-  const projectList = await (await fetch(`${baseUrl}/api/project-list`)).json();
-
-  return { props: { projectList } };
-}
-
-export default function Home({ projectList }) {
+export default function Home() {
   return (
     <>
       <PageHead />
@@ -30,7 +23,7 @@ export default function Home({ projectList }) {
               create awe-some-thing.
             </div>
           </div>
-          <HomeRight projectList={projectList} />
+          <HomeRight />
         </div>
       </div>
     </>

@@ -4,7 +4,7 @@ import CardExperience from "./card-experience";
 import CardProfile from "./card-profile";
 import CardProject from "./card-project";
 
-export default function HomeRight({ projectList }) {
+export default function HomeRight() {
   return (
     <div className={style.homeGrid}>
       <div className="md:flex xl:gap-3 flex-wrap items-start justify-center xl:justify-end mt-14 xl:mt-0">

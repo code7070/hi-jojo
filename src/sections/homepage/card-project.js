@@ -16,14 +16,20 @@ const Item = ({ name, link, year }) => {
   );
 };
 
-export default function CardProject({ projectList = { data: [] } }) {
+const projectList = [
+  { name: "Event", year: 2018, link: "/project/event-a" },
+  { name: "Submission Web", year: 2019, link: "/project/submission-a" },
+  { name: "Quiz Web", year: 2020, link: "/project/quiz-m" },
+];
+
+export default function CardProject({}) {
   return (
     <div className={`${style.homeCard} ${style.left} bg-secondary  min-h-16 `}>
       <div className="pt-6 px-6">
         <div className="text-4xl font-extrabold opacity-70 mb-8">Projects</div>
       </div>
       <div className="mb-8">
-        {projectList.data.slice(0, 3).map((item) => (
+        {projectList.slice(0, 3).map((item) => (
           <Item key={item.link} {...item} />
         ))}
       </div>
