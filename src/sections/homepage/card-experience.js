@@ -53,7 +53,7 @@ const ResponseView = ({ variants, setVariants }) => {
   return (
     <div className="mt-8 flex justify-center gap-3">
       <button
-        className="btn btn-square btn-secondary"
+        className="btn btn-square btn-secondary text-xl font-bold"
         type="button"
         onClick={reload}
         disabled={varInit}

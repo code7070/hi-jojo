@@ -7,7 +7,7 @@ export default function Header() {
   const atHome = path === "/";
 
   return (
-    <header>
+    <header className="fixed left-0 top-0 right-0 bg-base-100">
       <div className="content-wrapper py-4 ">
         <div className="container flex items-center justify-start h-9">
           <Link href="/">

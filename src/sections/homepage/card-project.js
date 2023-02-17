@@ -1,5 +1,6 @@
 import style from "@styles/home.module.css";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Item = ({ name, link, year }) => {
   return (
@@ -23,6 +24,8 @@ const projectList = [
 ];
 
 export default function CardProject({}) {
+  const router = useRouter();
+  const toWorks = () => router.push("/works");
   return (
     <div className={`${style.homeCard} ${style.left} bg-secondary  min-h-16 `}>
       <div className="pt-6 px-6">
@@ -33,7 +36,11 @@ export default function CardProject({}) {
           <Item key={item.link} {...item} />
         ))}
       </div>
-      <button className="btn btn-primary bg-jo-green-1 border-transparent rounded-none w-full font-bold outline-none transition-all duration-100 hover:tracking-widest active:rounded-xl">
+      <button
+        className="btn btn-primary bg-jo-green-1 border-transparent rounded-none w-full font-bold outline-none transition-all duration-100 hover:tracking-widest active:rounded-xl"
+        onClick={toWorks}
+        type="button"
+      >
         See More
       </button>
     </div>

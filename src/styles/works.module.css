@@ -1,0 +1,86 @@
+@keyframes head1 {
+  0% {
+    opacity: 0;
+    transform: translate(0, 50%);
+  }
+  70% {
+    opacity: 1;
+    transform: translate(0, -10%);
+  }
+  100% {
+    opacity: 0.7;
+    transform: translate(0, 0%);
+  }
+}
+
+.headline1 {
+  @apply transition-all duration-300 opacity-0;
+  animation: head1 1s cubic-bezier(0.165, 0.84, 0.44, 1) 0.25s 1 forwards;
+}
+
+/*  */
+
+@keyframes head2 {
+  0% {
+    opacity: 0;
+    transform: translate(0, 50%);
+  }
+  70% {
+    opacity: 0.7;
+    transform: translate(0, -10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0%);
+  }
+}
+
+@keyframes undershow {
+  from {
+    @apply w-0;
+  }
+  to {
+    @apply w-[87%];
+  }
+}
+
+.headline2 {
+  @apply relative inline-block transition-all duration-300 opacity-0;
+  animation: head2 1s cubic-bezier(0.165, 0.84, 0.44, 1) 1s 1 forwards;
+}
+
+.headline2::after {
+  content: "";
+  @apply absolute left-0 -bottom-1 h-[3px] w-0 bg-neutral;
+  animation: undershow 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 2s 1 forwards;
+}
+
+/*  */
+/* 
+
+
+
+
+
+
+
+
+*/
+/*  */
+.workPerYear {
+  @apply my-20;
+}
+
+.year {
+  @apply relative min-h-[400px];
+}
+
+.year::after {
+  content: "";
+  @apply absolute w-1 h-full left-[50%] top-[84px] bg-secondary;
+  transform: translate(-50%);
+}
+
+.yearHead {
+  @apply sticky top-0 text-center mx-auto text-primary text-3xl font-black p-6 z-50;
+}
