@@ -33,3 +33,7 @@ body {
 .projectDesc {
   @apply text-lg font-medium mt-6;
 }
+
+body {
+  padding-top: 70px;
+}

@@ -3,10 +3,11 @@ import style from "@styles/home.module.css";
 import { useEffect, useState } from "react";
 
 const chatList = [
-  { text: "What tools u used before?", type: "start" },
-  { text: "i use ReactJS, NextJS", type: "end" },
-  { text: "Sass & TailwindCSS too 😜", type: "end" },
-  { text: "Cool! Let's talk", type: "start" },
+  { text: "What stacks have u used before?", type: "start" },
+  { text: "i use ReactJS, NextJS often", type: "end" },
+  { text: "Sass, TailwindCSS for styling", type: "end" },
+  { text: "now, i trying explore Angular", type: "end" },
+  { text: "COOOL!! Let's talk", type: "start" },
 ];
 
 const transition = (num, variants) => ({
@@ -53,7 +54,7 @@ const ResponseView = ({ variants, setVariants }) => {
   return (
     <div className="mt-8 flex justify-center gap-3">
       <button
-        className="btn btn-square btn-secondary text-xl font-bold"
+        className="btn btn-square btn-secondary text-xl font-black"
         type="button"
         onClick={reload}
         disabled={varInit}
