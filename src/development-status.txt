@@ -1,0 +1,5 @@
+- add icon private/public project
+- truncate line amount description
+- add linker
+- design how can project detail opened
+- add tags pages

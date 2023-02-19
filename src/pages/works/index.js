@@ -75,8 +75,8 @@ export default function WorksPage({ workyear = [] }) {
             <div key={i.year} className={styles.year}>
               <div className={styles.yearHead}>{i.year}</div>
               <div className={styles.workGrouped}>
-                {i.works.map((w) => (
-                  <ProjectCard key={w.link} {...w} />
+                {i.works.map((w, index) => (
+                  <ProjectCard key={w.link} {...w} isFirst={index === 0} />
                 ))}
               </div>
             </div>
