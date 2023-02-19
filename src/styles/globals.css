@@ -14,6 +14,10 @@ body {
   /* overflow-x: hidden; */
 }
 
+body {
+  padding-top: 70px;
+}
+
 .container {
   @apply relative max-w-7xl mx-auto;
 }
@@ -34,6 +38,6 @@ body {
   @apply text-lg font-medium mt-6;
 }
 
-body {
-  padding-top: 70px;
+.bodyContent {
+  @apply max-w-4xl mx-auto;
 }

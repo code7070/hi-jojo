@@ -68,19 +68,26 @@
 */
 /*  */
 .workPerYear {
-  @apply my-20;
+  @apply mt-20;
 }
 
 .year {
   @apply relative min-h-[400px];
 }
 
-.year::after {
+.year::before {
   content: "";
-  @apply absolute w-1 h-full left-[50%] top-[54px] bg-secondary;
+  @apply absolute w-1 left-[50%] top-[54px];
   transform: translate(-50%);
+  height: calc(100% - 54px);
+  background: linear-gradient(to bottom, #cce4d0, #ecf5f0, #cce4d0);
+  background-size: 100% 40px;
 }
 
 .yearHead {
-  @apply sticky top-[70px] text-center mx-auto text-primary text-3xl font-black p-2 bg-base-100 h-[54px] z-[1];
+  @apply sticky top-[67px] text-center mx-auto text-primary text-3xl font-black bg-base-100 h-[36px] z-[1];
+}
+
+.workGrouped {
+  @apply py-20 flex items-center justify-center flex-col;
 }
