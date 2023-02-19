@@ -4,8 +4,8 @@ export default function ProjectCard({
   isEven,
   stacks,
 }) {
-  let evenClass = "md:-translate-x-[60%]";
-  if (isEven) evenClass = "md:translate-x-[60%]";
+  let evenClass = "md:translate-x-[60%]";
+  if (isEven) evenClass = "md:-translate-x-[60%]";
   const stacklist = `${stacks}`.split(",");
   return (
     <div
@@ -17,15 +17,19 @@ export default function ProjectCard({
         <div className="text-sm font-medium leading-normal opacity-80">
           {description}
         </div>
-        <div className="text-sm my-4 font-bold tracking-wide">
-          {stacklist.map((i) => (
-            <span
-              key={i}
-              className="opacity-30 hover:opacity-80 hover:underline mr-2 after:content-[',']"
-            >
-              {i}
-            </span>
-          ))}
+        <div className="text-sm my-4 font-bold tracking-wide flex flex-wrap">
+          {stacklist.map((i, index) => {
+            const isLast = index + 1 === stacklist.length;
+            const classComma = isLast ? "" : "after:content-[',']";
+            return (
+              <span
+                key={i}
+                className={`opacity-30 hover:opacity-80 hover:underline mr-2 ${classComma}`}
+              >
+                {i}
+              </span>
+            );
+          })}
         </div>
       </div>
     </div>

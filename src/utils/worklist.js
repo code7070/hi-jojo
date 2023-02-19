@@ -1,5 +1,11 @@
 const workList = [
   {
+    name: "/hi-jojo",
+    year: 2022,
+    link: "/hi-jojo",
+    stacks: "NextJS,TailwindCSS,daisyUI,Vercel",
+  },
+  {
     name: "Cari Manis",
     year: 2022,
     link: "/cari-manis",
