@@ -89,5 +89,5 @@
 }
 
 .workGrouped {
-  @apply py-20 flex items-center justify-center flex-col;
+  @apply py-16 flex items-center justify-center flex-col;
 }

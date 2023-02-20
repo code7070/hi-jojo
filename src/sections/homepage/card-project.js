@@ -29,7 +29,7 @@ export default function CardProject({}) {
   return (
     <div className={`${style.homeCard} ${style.left} bg-secondary  min-h-16 `}>
       <div className="pt-6 px-6">
-        <div className="text-4xl font-extrabold opacity-70 mb-8">Projects</div>
+        <div className="text-4xl font-extrabold opacity-70 mb-8">Works</div>
       </div>
       <div className="mb-8">
         {projectList.slice(0, 3).map((item) => (
@@ -37,7 +37,7 @@ export default function CardProject({}) {
         ))}
       </div>
       <button
-        className="btn btn-primary bg-jo-green-1 border-transparent rounded-none w-full font-bold outline-none transition-all duration-100 hover:tracking-widest active:rounded-xl"
+        className="btn btn-primary bg-primary border-transparent rounded-none w-full font-bold outline-none transition-all duration-100 hover:tracking-widest active:rounded-xl"
         onClick={toWorks}
         type="button"
       >

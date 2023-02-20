@@ -49,8 +49,9 @@ const LastSection = () => (
   <div className="bg-black text-slate-700 py-4 px-8 lg:px-14 border-2 border-primary rounded-3xl w-[95%] max-w-2xl mx-auto mb-20">
     <div className="my-4 font-semibold text-2xl text-center italic text-white opacity-20">
       <div className="text-xl lg:text-2-xl hidden md:block">
-        Uh sorry, this time is no longer reachable for you. Let call this
-        section is...
+        Sorry, this time is no longer reachable for you.
+        <br />
+        Let call this section is...
       </div>
       <div className="my-6 tracking-wider text-3xl lg:text-4xl font-black">
         DARK AGES

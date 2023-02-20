@@ -75,7 +75,7 @@ const ResponseView = ({ variants, setVariants }) => {
         transition={transition(chatList.length + 1, variants)}
       >
         <button
-          className="btn btn-primary btn-outline border-2 w-full !font-extrabold"
+          className="btn btn-primary border-2 w-full !font-bold tracking-wide"
           type="button"
         >
           Contact Here
@@ -90,12 +90,11 @@ export default function CardExperience() {
 
   return (
     <div
-      className={`${style.homeCard} ${style.right} bg-accent transition-all duration-500 xl:mt-10`}
+      className={`${style.homeCard} ${style.right} bg-secondary-focus transition-all duration-500 xl:mt-10`}
     >
-      <div className="p-6">
-        <div className="text-4xl font-extrabold opacity-40 mb-8">
-          Four years as UI maker.
-        </div>
+      <div className="p-6 text-accent-content font-extrabold">
+        <div className="text-4xl opacity-70">Four years</div>
+        <div className="text-2xl opacity-40 mb-6">as an UI maker</div>
         {chatList.map((item, index) => (
           <Bubble item={item} index={index} key={index} animate={variants} />
         ))}

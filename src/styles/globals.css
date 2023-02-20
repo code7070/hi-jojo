@@ -41,3 +41,25 @@ body {
 .bodyContent {
   @apply max-w-4xl mx-auto;
 }
+
+.word-underline {
+  position: relative;
+}
+
+@keyframes underlineAnimated {
+  from {
+    @apply w-0;
+  }
+  to {
+    @apply w-[90%];
+  }
+}
+
+.word-underline::before {
+  content: "";
+  @apply absolute left-0 bottom-0 h-2 bg-warning w-0 -z-[1];
+}
+
+.word-underline.animated::before {
+  animation: underlineAnimated 1s linear 3s 1 forwards;
+}
