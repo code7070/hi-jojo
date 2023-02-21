@@ -3,15 +3,15 @@ import styles from "@styles/works.module.css";
 import workList from "@utils/worklist";
 import PageHead from "./PageHead";
 
-export async function getStaticPaths() {
+export function getStaticPaths() {
   const paths = [{ params: { works: ["works"] } }];
 
-  await workList.map(
-    async (l) =>
-      await l.works.map((w) =>
-        paths.push({ params: { works: ["works", w.link] } })
-      )
-  );
+  // await workList.map(
+  //   async (l) =>
+  //     await l.works.map((w) =>
+  //       paths.push({ params: { works: ["works", w.link] } })
+  //     )
+  // );
 
   return {
     paths,
@@ -25,7 +25,7 @@ export function getStaticProps({ params }) {
   };
 }
 
-export function WorklistView() {
+function WorklistView() {
   return (
     <div className="container">
       <div className="headerPage text-center mt-20 mb-32">
@@ -39,14 +39,16 @@ export function WorklistView() {
           <div key={i.year} className={styles.year}>
             <div className={styles.yearHead}>{i.year}</div>
             <div className={styles.workGrouped}>
-              {i.works.map((w, index) => (
-                <ProjectCard
-                  key={w.link}
-                  {...w}
-                  isFirst={index === 0}
-                  isEven={index % 2 === 0}
-                />
-              ))}
+              {i.works.map((w, index) => {
+                return (
+                  <ProjectCard
+                    key={w.link}
+                    {...w}
+                    isFirst={index === 0}
+                    isEven={index % 2 === 0}
+                  />
+                );
+              })}
             </div>
           </div>
         ))}

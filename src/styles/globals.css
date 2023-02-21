@@ -63,3 +63,11 @@ body {
 .word-underline.animated::before {
   animation: underlineAnimated 1s linear 3s 1 forwards;
 }
+
+#nprogress .bar {
+  @apply bg-warning;
+}
+
+#nprogress .spinner-icon {
+  @apply border-primary border-l-transparent;
+}
