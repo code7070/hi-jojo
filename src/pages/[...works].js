@@ -1,9 +1,20 @@
 import ProjectCard from "@layouts/project/project-card";
 import styles from "@styles/works.module.css";
 import workList from "@utils/worklist";
-import PageHead from "../PageHead";
+import PageHead from "./PageHead";
 
-export function getStaticProps() {
+export function getStaticPaths() {
+  const extenderPath = workList.map((i) => ({
+    params: { works: ["works", i.link.slice(1)] },
+  }));
+  console.log("STATIC: ", extenderPath);
+  return {
+    paths: [{ params: { works: ["works"] } }, ...extenderPath],
+    fallback: false,
+  };
+}
+
+export function getStaticProps({ params }) {
   let yearlist = [];
   workList.map((i) => yearlist.push(i.year));
   yearlist.sort(function (a, b) {
@@ -45,6 +56,32 @@ export function getStaticProps() {
   };
 }
 
+export function WorklistView({ workyear }) {
+  return (
+    <div className="container">
+      <div className="headerPage text-center mt-20 mb-32">
+        <div className={styles.headline1}>What i do, called</div>
+        <div>
+          <div className={styles.headline2}>works</div>
+        </div>
+      </div>
+      <div className={styles.workPerYear}>
+        {workyear.map((i) => (
+          <div key={i.year} className={styles.year}>
+            <div className={styles.yearHead}>{i.year}</div>
+            <div className={styles.workGrouped}>
+              {i.works.map((w, index) => (
+                <ProjectCard key={w.link} {...w} isFirst={index === 0} />
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+      <LastSection />
+    </div>
+  );
+}
+
 const LastSection = () => (
   <div className="bg-black text-slate-700 py-4 px-8 lg:px-14 border-2 border-primary rounded-3xl w-[95%] max-w-2xl mx-auto mb-20">
     <div className="my-4 font-semibold text-2xl text-center italic text-white opacity-20">
@@ -64,27 +101,7 @@ export default function WorksPage({ workyear = [] }) {
   return (
     <>
       <PageHead title="Jojo - Works" />
-      <div className="container">
-        <div className="headerPage text-center mt-20 mb-32">
-          <div className={styles.headline1}>What i do, called</div>
-          <div>
-            <div className={styles.headline2}>works</div>
-          </div>
-        </div>
-        <div className={styles.workPerYear}>
-          {workyear.map((i) => (
-            <div key={i.year} className={styles.year}>
-              <div className={styles.yearHead}>{i.year}</div>
-              <div className={styles.workGrouped}>
-                {i.works.map((w, index) => (
-                  <ProjectCard key={w.link} {...w} isFirst={index === 0} />
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-        <LastSection />
-      </div>
+      <WorklistView workyear={workyear} />
     </>
   );
 }
