@@ -3,13 +3,14 @@ import styles from "@styles/works.module.css";
 import workList from "@utils/worklist";
 import PageHead from "./PageHead";
 
-export function getStaticPaths() {
+export async function getStaticPaths() {
   const paths = [{ params: { works: ["works"] } }];
 
-  workList.map((l) =>
-    l.works.map((w) =>
-      paths.push({ params: { works: ["works", `${w.link}`.slice(1)] } })
-    )
+  await workList.map(
+    async (l) =>
+      await l.works.map((w) =>
+        paths.push({ params: { works: ["works", w.link] } })
+      )
   );
 
   return {
@@ -20,11 +21,11 @@ export function getStaticPaths() {
 
 export function getStaticProps({ params }) {
   return {
-    props: {},
+    props: { params },
   };
 }
 
-export function WorklistView({}) {
+export function WorklistView() {
   return (
     <div className="container">
       <div className="headerPage text-center mt-20 mb-32">
@@ -70,11 +71,12 @@ const LastSection = () => (
   </div>
 );
 
-export default function WorksPage({ workyear = [] }) {
+export default function WorksPage({ params }) {
+  console.log("WORKS PAGE: ", params);
   return (
     <>
       <PageHead title="Jojo - Works" />
-      <WorklistView workyear={workyear} />
+      <WorklistView />
     </>
   );
 }

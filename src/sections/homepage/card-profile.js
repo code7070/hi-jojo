@@ -18,6 +18,7 @@ export default function CardProfile() {
           src="/profile/profile-bw.webp"
           width={314}
           height={100}
+          priority
         />
       </div>
     </div>
