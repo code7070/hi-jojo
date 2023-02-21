@@ -4,59 +4,27 @@ import workList from "@utils/worklist";
 import PageHead from "./PageHead";
 
 export function getStaticPaths() {
-  const extenderPath = workList.map((i) => ({
-    params: { works: ["works", i.link.slice(1)] },
-  }));
-  console.log("STATIC: ", extenderPath);
+  const paths = [{ params: { works: ["works"] } }];
+
+  workList.map((l) =>
+    l.works.map((w) =>
+      paths.push({ params: { works: ["works", `${w.link}`.slice(1)] } })
+    )
+  );
+
   return {
-    paths: [{ params: { works: ["works"] } }, ...extenderPath],
+    paths,
     fallback: false,
   };
 }
 
 export function getStaticProps({ params }) {
-  let yearlist = [];
-  workList.map((i) => yearlist.push(i.year));
-  yearlist.sort(function (a, b) {
-    return b - a;
-  });
-
-  let yearset = [...new Set(yearlist)];
-
-  let workyear = [];
-
-  yearset.map((i) => {
-    let works = [];
-    workList.map((x) => (x.year === i ? works.push(x) : x));
-    return workyear.push({ year: i, works });
-  });
-
-  let draft = [];
-  let finalWorklist = [];
-
-  workyear.map((i) =>
-    i.works.map((w) => draft.push({ ...w, isEven: draft.length % 2 === 0 }))
-  );
-
-  workyear.map((y) => {
-    finalWorklist.push({
-      ...y,
-      works: y.works.map((i) => {
-        const match = draft.find((d) => d.link === i.link);
-        return match;
-      }),
-    });
-  });
-
-  // if(draft.length>0) draft.map(d => )
-  // console.log("STATIC: ", { draft, workyear, finalWorklist });
-
   return {
-    props: { workyear: finalWorklist },
+    props: {},
   };
 }
 
-export function WorklistView({ workyear }) {
+export function WorklistView({}) {
   return (
     <div className="container">
       <div className="headerPage text-center mt-20 mb-32">
@@ -66,12 +34,17 @@ export function WorklistView({ workyear }) {
         </div>
       </div>
       <div className={styles.workPerYear}>
-        {workyear.map((i) => (
+        {workList.map((i) => (
           <div key={i.year} className={styles.year}>
             <div className={styles.yearHead}>{i.year}</div>
             <div className={styles.workGrouped}>
               {i.works.map((w, index) => (
-                <ProjectCard key={w.link} {...w} isFirst={index === 0} />
+                <ProjectCard
+                  key={w.link}
+                  {...w}
+                  isFirst={index === 0}
+                  isEven={index % 2 === 0}
+                />
               ))}
             </div>
           </div>
