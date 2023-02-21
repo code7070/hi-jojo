@@ -6,12 +6,9 @@ import PageHead from "./PageHead";
 export function getStaticPaths() {
   const paths = [{ params: { works: ["works"] } }];
 
-  // await workList.map(
-  //   async (l) =>
-  //     await l.works.map((w) =>
-  //       paths.push({ params: { works: ["works", w.link] } })
-  //     )
-  // );
+  workList.map((l) =>
+    l.works.map((w) => paths.push({ params: { works: ["works", w.link] } }))
+  );
 
   return {
     paths,
@@ -35,17 +32,18 @@ function WorklistView() {
         </div>
       </div>
       <div className={styles.workPerYear}>
-        {workList.map((i) => (
+        {workList.map((i, yIndex) => (
           <div key={i.year} className={styles.year}>
             <div className={styles.yearHead}>{i.year}</div>
             <div className={styles.workGrouped}>
-              {i.works.map((w, index) => {
+              {i.works.map((w, wIndex) => {
+                let isEven = wIndex % 2 === 0;
                 return (
                   <ProjectCard
                     key={w.link}
                     {...w}
-                    isFirst={index === 0}
-                    isEven={index % 2 === 0}
+                    isFirst={wIndex === 0}
+                    isEven={isEven}
                   />
                 );
               })}
