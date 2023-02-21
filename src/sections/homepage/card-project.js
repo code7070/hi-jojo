@@ -25,7 +25,7 @@ const projectList = [
 
 export default function CardProject({}) {
   const router = useRouter();
-  const toWorks = () => router.push("/works", undefined, { shallow: true });
+  const toWorks = () => router.push("/works", "/works", { shallow: true });
   return (
     <div className={`${style.homeCard} ${style.left} bg-secondary  min-h-16 `}>
       <div className="pt-6 px-6">

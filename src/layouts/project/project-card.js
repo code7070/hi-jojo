@@ -61,7 +61,14 @@ export default function ProjectCard({
   };
 
   return (
-    <Link href={`/works/${link || ""}`} scroll={false}>
+    <Link
+      href={`/works/${link || ""}`}
+      scroll={false}
+      shallow
+      onClick={() => {
+        document.body.style.overflow = "hidden";
+      }}
+    >
       <Card>
         <Content />
       </Card>

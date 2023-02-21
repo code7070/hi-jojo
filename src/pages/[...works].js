@@ -2,6 +2,7 @@ import ProjectCard from "@layouts/project/project-card";
 import styles from "@styles/works.module.css";
 import workList from "@utils/worklist";
 import PageHead from "./PageHead";
+import WorkDetail from "./work-details";
 
 export function getStaticPaths() {
   const paths = [{ params: { works: ["works"] } }];
@@ -20,6 +21,17 @@ export function getStaticProps({ params }) {
   return {
     props: { params },
   };
+}
+
+export default function WorksPage({ params }) {
+  console.log("WORKS PAGE: ", params);
+  return (
+    <>
+      <PageHead title="Jojo - Works" />
+      <WorklistView />
+      <WorkDetail params={params.works} />
+    </>
+  );
 }
 
 function WorklistView() {
@@ -70,13 +82,3 @@ const LastSection = () => (
     </div>
   </div>
 );
-
-export default function WorksPage({ params }) {
-  console.log("WORKS PAGE: ", params);
-  return (
-    <>
-      <PageHead title="Jojo - Works" />
-      <WorklistView />
-    </>
-  );
-}
