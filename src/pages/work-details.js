@@ -41,6 +41,14 @@ export default function WorkDetail({ params = [] }) {
             </button>
           </div>
           <div className={styles.content}>{/*  */}</div>
+          <div className="sm:hidden">
+            <button
+              className="btn btn-error rounded-t-none w-full font-bold tracking-wide"
+              onClick={doBack}
+            >
+              Close
+            </button>
+          </div>
         </div>
       </div>
     </>

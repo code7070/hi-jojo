@@ -8,8 +8,9 @@
 }
 
 .modal {
-  @apply fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] h-[95%] w-[90%] max-w-6xl bg-white rounded-2xl transition-all duration-300 z-[999];
+  @apply fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] h-[90%] w-[90%] max-w-6xl bg-white rounded-2xl transition-all duration-300 z-[999];
   @apply scale-50 opacity-0 pointer-events-none;
+  @apply sm:h-[95%];
 }
 
 .modal.show {
@@ -17,8 +18,8 @@
 }
 
 .btnClose {
-  @apply absolute right-0 top-0 transition-all duration-200 delay-200 translate-x-[40px] translate-y-[40px];
-  @apply opacity-0 -rotate-90;
+  @apply absolute right-0 top-0 transition-all duration-200 delay-200 hidden;
+  @apply opacity-0 -rotate-90 sm:translate-x-[40px] sm:translate-y-[40px];
 }
 
 .btnClose.show {
@@ -30,5 +31,12 @@
 }
 
 .content {
-  @apply relative w-full h-full overflow-y-auto overflow-x-hidden p-4;
+  @apply relative w-full overflow-y-auto overflow-x-hidden p-4;
+  height: calc(100% - 48px);
+}
+
+@media (min-width: 640px) {
+  .content {
+    @apply h-full;
+  }
 }
