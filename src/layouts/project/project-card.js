@@ -34,10 +34,12 @@ export default function ProjectCard({
       </div>
       <div className="p-4 bg-white">
         <h3 className="font-black opacity-60 text-2xl">{name}</h3>
-        <div className="text-sm font-medium leading-normal opacity-80 line-clamp-4">
-          {description}
+        <div className="hidden sm:block">
+          <div className="text-sm font-medium leading-normal opacity-80 line-clamp-2">
+            {description}
+          </div>
         </div>
-        <div className="text-sm my-4 font-bold tracking-wide flex flex-wrap">
+        <div className="text-sm mt-4 font-bold tracking-wide flex flex-wrap">
           {stacklist.map((i, index) => {
             const isLast = index + 1 === stacklist.length;
             const classComma = isLast ? "" : "after:content-[',']";
@@ -51,6 +53,11 @@ export default function ProjectCard({
             );
           })}
         </div>
+        <div className="mt-4 text-center">
+          <button className="btn btn-wide btn-primary" onClick={navigate}>
+            Details
+          </button>
+        </div>
       </div>
     </>
   );
@@ -63,18 +70,8 @@ export default function ProjectCard({
   };
 
   const Card = ({ children }) => {
-    if (asDiv)
-      return (
-        <div className={cardClass} onClick={navigate}>
-          {children}
-        </div>
-      );
-    else
-      return (
-        <section className={cardClass} onClick={navigate}>
-          {children}
-        </section>
-      );
+    if (asDiv) return <div className={cardClass}>{children}</div>;
+    else return <section className={cardClass}>{children}</section>;
   };
 
   return (
