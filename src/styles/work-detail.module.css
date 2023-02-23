@@ -11,9 +11,9 @@
   0% {
     /* @apply opacity-0 scale-75; */
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0.75);
+    transform: translate(-50%, -50%) scale(0.9);
   }
-  50% {
+  25% {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1.1);
   }
@@ -29,13 +29,13 @@
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
-  50% {
+  25% {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1.1);
   }
   100% {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0.75);
+    transform: translate(-50%, -50%) scale(0.9);
   }
 }
 
@@ -49,12 +49,12 @@
 
 .modal.show {
   @apply pointer-events-auto;
-  animation: showModal 0.25s ease-out 1 forwards;
+  animation: showModal 0.35s ease-out 1 forwards;
 }
 
 .modal.closed {
   @apply pointer-events-none;
-  animation: closeModal 0.25s ease-in 1 forwards;
+  animation: closeModal 0.35s ease-in 1 forwards;
 }
 
 .btnClose {
