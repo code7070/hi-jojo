@@ -38,7 +38,7 @@ export default function WorkDetail({ params = [] }) {
 
   return (
     <>
-      {hasWork && <PageHead title={`Jojo - ${workTarget.name}`} />}
+      {hasWork && <PageHead title={`Works - ${workTarget.name}`} />}
       <div className={classJoiner("overlay")} onClick={doBack} />
 
       <div className={classJoiner("modal")}>

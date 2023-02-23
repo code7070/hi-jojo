@@ -1,10 +1,10 @@
 .overlay {
-  @apply fixed top-0 left-0 w-full h-full bg-white transition-all z-[900] duration-200;
+  @apply fixed top-0 left-0 w-full h-full bg-secondary transition-all z-[900] duration-200;
   @apply opacity-0 pointer-events-none;
 }
 
 .overlay.show {
-  @apply opacity-50 backdrop-blur-md pointer-events-auto;
+  @apply opacity-90 backdrop-blur-md pointer-events-auto;
 }
 
 @keyframes showModal {
@@ -15,7 +15,7 @@
   }
   25% {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1.1);
+    transform: translate(-50%, -50%) scale(1.025);
   }
   100% {
     opacity: 1;
@@ -31,7 +31,7 @@
   }
   25% {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1.1);
+    transform: translate(-50%, -50%) scale(1.025);
   }
   100% {
     opacity: 0;
@@ -48,18 +48,18 @@
 }
 
 .modal.show {
-  @apply pointer-events-auto;
+  @apply pointer-events-auto shadow-lg;
   animation: showModal 0.35s ease-out 1 forwards;
 }
 
 .modal.closed {
-  @apply pointer-events-none;
+  @apply pointer-events-none shadow-none;
   animation: closeModal 0.35s ease-in 1 forwards;
 }
 
 .btnClose {
   @apply absolute right-0 top-0 transition-all duration-200 delay-200 hidden;
-  @apply opacity-0 -rotate-90 sm:translate-x-[40px] sm:translate-y-[40px];
+  @apply opacity-0 -rotate-90 sm:translate-x-[40px] sm:translate-y-[40px] sm:block;
 }
 
 .btnClose.show {
