@@ -1,10 +1,11 @@
 import style from "@styles/home.module.css";
+import workList from "@utils/worklist";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 const Item = ({ name, link, year }) => {
   return (
-    <Link href={link}>
+    <Link href={`/works/${link}`} shallow={true}>
       <div className={style.projectItem}>
         {/* <div className={style.bgRipple} /> */}
         <div className={style.borders} />
@@ -17,11 +18,7 @@ const Item = ({ name, link, year }) => {
   );
 };
 
-const projectList = [
-  { name: "Event", year: 2018, link: "/project/event-a" },
-  { name: "Submission Web", year: 2019, link: "/project/submission-a" },
-  { name: "Quiz Web", year: 2020, link: "/project/quiz-m" },
-];
+const projectList = [workList[0].works[0], workList[1].works[0]];
 
 export default function CardProject({}) {
   const router = useRouter();
