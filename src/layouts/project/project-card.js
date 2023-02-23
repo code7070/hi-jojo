@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { useRouter } from "next/router";
 import EyeSlashIcon from "public/icons/eye-slash";
 
 const PrivateIcon = () => (
@@ -24,6 +24,8 @@ export default function ProjectCard({
   if (isEven) evenClass = "md:-translate-x-[60%]";
   const stacklist = `${stacks}`.split(",");
   const noFirstClass = isFirst ? "" : "md:-mt-36";
+
+  const { push } = useRouter();
 
   const Content = () => (
     <>
@@ -55,23 +57,29 @@ export default function ProjectCard({
 
   const cardClass = `relative rounded-2xl w-[100%] border-4 border-secondary overflow-hidden max-w-xs ${evenClass} ${noFirstClass} my-6 transition-all duration-300 cursor-pointer hover:border-accent`;
 
+  const navigate = () => {
+    document.body.style.overflow = "hidden";
+    push(`/works/${link || ""}`, undefined, { shallow: true, scroll: false });
+  };
+
   const Card = ({ children }) => {
-    if (asDiv) return <div className={cardClass}>{children}</div>;
-    else return <section className={cardClass}>{children}</section>;
+    if (asDiv)
+      return (
+        <div className={cardClass} onClick={navigate}>
+          {children}
+        </div>
+      );
+    else
+      return (
+        <section className={cardClass} onClick={navigate}>
+          {children}
+        </section>
+      );
   };
 
   return (
-    <Link
-      href={`/works/${link || ""}`}
-      scroll={false}
-      shallow
-      onClick={() => {
-        document.body.style.overflow = "hidden";
-      }}
-    >
-      <Card>
-        <Content />
-      </Card>
-    </Link>
+    <Card>
+      <Content />
+    </Card>
   );
 }

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import style from "@styles/home.module.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const chatList = [
   { text: "What stacks have u used before?", type: "start" },

@@ -3,35 +3,47 @@ import workList from "@utils/worklist";
 import { useRouter } from "next/router";
 import PageHead from "./PageHead";
 import styles from "@styles/work-detail.module.css";
+import { useEffect, useState } from "react";
 
 export default function WorkDetail({ params = [] }) {
+  const [workTarget, setWorkTarget] = useState({});
+  const [open, setOpen] = useState(false);
+
   const { replace, asPath } = useRouter();
 
   const doBack = () => {
     document.body.style.overflow = "auto";
     replace("/works", undefined, { shallow: true });
+    setOpen("closed");
+    setTimeout(() => {
+      if (Object.keys(workTarget).length < 1) setOpen(false);
+    }, 500);
   };
 
   const target = asPath.length > 7 ? asPath.slice(7) : "";
 
-  let workTarget = {};
-  if (target)
-    workList.map((i) => {
-      const catched = i.works.find((i) => i.link === target);
-      if (catched) workTarget = catched;
-    });
+  useEffect(() => {
+    if (target) {
+      workList.map((i) => {
+        const catched = i.works.find((i) => i.link === target);
+        if (catched) setWorkTarget(catched);
+      });
+      setOpen("show");
+    } else setWorkTarget(false);
+  }, [target]);
 
   const hasWork = workTarget && Object.keys(workTarget).length > 1;
 
-  const showClass = hasWork ? styles.show : "";
+  const classJoiner = (name = "") => `${styles[name]} ${styles[open || ""]}`;
 
   return (
     <>
-      {hasWork && <PageHead title={`Jojo - Works - ${workTarget.name}`} />}
-      <div className={`${styles.overlay} ${showClass}`} onClick={doBack} />
-      <div className={`${styles.modal} ${showClass}`}>
+      {hasWork && <PageHead title={`Jojo - ${workTarget.name}`} />}
+      <div className={classJoiner("overlay")} onClick={doBack} />
+
+      <div className={classJoiner("modal")}>
         <div className="relative w-full h-full">
-          <div className={`${styles.btnClose} ${showClass}`}>
+          <div className={classJoiner("btnClose")}>
             <button
               onClick={doBack}
               type="button"
