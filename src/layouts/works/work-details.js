@@ -38,6 +38,7 @@ export default function WorkDetail({ params = [] }) {
     } else {
       setWorkTarget({});
       setOpen("closed");
+      document.body.style.overflow = "auto";
     }
   }, [target]);
 

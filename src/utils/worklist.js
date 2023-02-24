@@ -15,6 +15,8 @@ const workList = [
         year: 2023,
         link: "hi-jojo",
         stacks: "NextJS,TailwindCSS,daisyUI,Vercel",
+        description:
+          "Profile page saya pribadi yang dibangun secara dadakan, tanpa designer.",
       },
     ],
   },
@@ -22,16 +24,20 @@ const workList = [
     year: "2022",
     works: [
       {
-        name: "Zupet",
+        name: "ZuPet",
         year: 2022,
         link: "zupet",
         stacks: "ReactJS,Notion,CSS module",
+        description:
+          "ZuPet merupakan protipe platform untuk melakukan transaksi perawatan hingga pakan hewan peliharaan. Project ini berjalan secara internal dan sedang menunggu pendanaan untuk tahap berikutnya ;)",
       },
       {
         name: "Meat Supplier Landing Page",
         year: 2022,
         link: "meat-supplier-gpw",
-        stacks: "ReactJS,Notion,CSS module",
+        stacks: "ReactJS,Notion,CSS module,Client-driven",
+        description:
+          "Klien yang berfokus pada penyedia berbagai jenis daging sapi premium menginginkan untuk menyatukan mini-galeri produk di dalam company profile mereka.",
       },
     ],
   },
@@ -44,6 +50,8 @@ const workList = [
         link: "e-commerce",
         stacks: "ReactJS,Figma,CSS module",
         isPrivate: true,
+        description:
+          "Project internal - sebuah web-app eCommerce yang menjual produk perusahaan dan rekanan.",
       },
     ],
   },
