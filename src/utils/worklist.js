@@ -7,6 +7,8 @@ const workList = [
         year: 2023,
         link: "cari-manis",
         stacks: "NextJS,TailwindCSS,CSS module,Supabase,Vercel",
+        description:
+          "Produk portofolio pertama dari Underline, yang diharapkan dapat membantu para pengguna yang ingin mengetahui kadar gula pada produk minuman",
       },
       {
         name: "/hi-jojo",

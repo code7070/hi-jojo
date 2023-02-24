@@ -77,32 +77,9 @@
 }
 
 .projectItem {
-  @apply relative py-3 px-6 hover:text-white font-semibold;
+  @apply relative py-3 px-6 font-semibold transition-all duration-200 hover:text-white hover:bg-primary;
 }
 
 .projectItem .borders {
-  @apply h-px bg-primary w-[85%] absolute left-[50%] bottom-0 -translate-x-[50%] transition-all duration-200;
-}
-
-@keyframes wider {
-  0% {
-    @apply h-full w-[0%];
-  }
-
-  100% {
-    @apply h-full w-full;
-  }
-}
-
-/* .projectItem:hover .borders {
-  animation: wider 0.3s linear 1 forwards;
-} */
-
-.projectItem::before {
-  content: "";
-  @apply absolute h-full w-[0%] top-0 left-[50%] bg-primary -translate-x-[50%] transition-all duration-100;
-}
-
-.projectItem:hover::before {
-  animation: wider 0.3s linear 1 forwards;
+  @apply h-px bg-primary w-[85%] absolute left-[50%] bottom-0 -translate-x-[50%];
 }

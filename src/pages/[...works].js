@@ -2,7 +2,7 @@ import ProjectCard from "@layouts/project/project-card";
 import styles from "@styles/works.module.css";
 import workList from "@utils/worklist";
 import PageHead from "./PageHead";
-import WorkDetail from "./work-details";
+import WorkDetail from "../layouts/works/work-details";
 
 export function getStaticPaths() {
   const paths = [{ params: { works: ["works"] } }];
@@ -48,17 +48,14 @@ function WorklistView() {
           <div key={i.year} className={styles.year}>
             <div className={styles.yearHead}>{i.year}</div>
             <div className={styles.workGrouped}>
-              {i.works.map((w, wIndex) => {
-                let isEven = wIndex % 2 === 0;
-                return (
-                  <ProjectCard
-                    key={w.link}
-                    {...w}
-                    isFirst={wIndex === 0}
-                    isEven={isEven}
-                  />
-                );
-              })}
+              {i.works.map((w, wIndex) => (
+                <ProjectCard
+                  key={w.link}
+                  {...w}
+                  isFirst={wIndex === 0}
+                  isEven={wIndex % 2 === 0}
+                />
+              ))}
             </div>
           </div>
         ))}

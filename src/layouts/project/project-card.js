@@ -70,8 +70,18 @@ export default function ProjectCard({
   };
 
   const Card = ({ children }) => {
-    if (asDiv) return <div className={cardClass}>{children}</div>;
-    else return <section className={cardClass}>{children}</section>;
+    if (asDiv)
+      return (
+        <div id={`works-${link}`} className={cardClass}>
+          {children}
+        </div>
+      );
+    else
+      return (
+        <section id={`works-${link}`} className={cardClass}>
+          {children}
+        </section>
+      );
   };
 
   return (

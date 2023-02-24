@@ -40,7 +40,7 @@
 }
 
 .modal {
-  @apply fixed top-[50%] left-[50%] h-[85%] w-[85%] sm:h-[90%];
+  @apply fixed top-[47%] sm:top-[50%] left-[50%] h-[85%] w-[85%] sm:h-[90%];
   @apply max-w-6xl bg-white rounded-2xl z-[999] pointer-events-none;
   @apply transition-all duration-200;
   opacity: 0;
@@ -71,7 +71,7 @@
 }
 
 .content {
-  @apply relative w-full overflow-y-auto overflow-x-hidden p-4;
+  @apply relative w-full overflow-y-auto overflow-x-hidden;
   height: calc(100% - 48px);
 }
 
