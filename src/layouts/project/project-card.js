@@ -10,13 +10,16 @@ const PrivateIcon = () => (
   </div>
 );
 
-const ColorBar = ({ colors }) => {
+export const ColorBar = ({ colors }) => {
   if (!colors || colors.length < 1) return "";
-  const eachClass = "w-8 h-2";
   return (
-    <div className="flex items-center justify-center absolute left-[8px] bottom-[8px]">
+    <div className="flex items-center">
       {colors.slice(0, 4).map((i, index) => (
-        <div key={index} className={eachClass} style={{ backgroundColor: i }} />
+        <div
+          key={index}
+          className={`w-8 h-2 border`}
+          style={{ backgroundColor: i }}
+        />
       ))}
     </div>
   );
@@ -48,7 +51,9 @@ export default function ProjectCard({
         className="h-[180px] relative bg-slate-100"
         style={{ backgroundColor: colors ? colorList[0] : "" }}
       >
-        <ColorBar colors={colorList} />
+        <div className="absolute left-[8px] bottom-[8px]">
+          <ColorBar colors={colorList} />
+        </div>
         {isPrivate && <PrivateIcon />}
       </div>
       <div className="p-4 bg-white">

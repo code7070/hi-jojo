@@ -1,3 +1,4 @@
+import { ColorBar } from "@layouts/project/project-card";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -55,14 +56,17 @@ export default function WorkContent({ workTarget = {} }) {
             {workTarget.year}
           </div>
           <div className="flex flex-wrap gap-2 -mx-2">
-            {workTarget.stacks?.split(",").map((stacks, index) => (
+            {workTarget.stacks?.split(",").map((stack, index) => (
               <div
                 className="badge badge-secondary badge-sm font-medium"
                 key={index}
               >
-                {stacks}
+                {stack}
               </div>
             ))}
+          </div>
+          <div className="my-4 relative py-2">
+            <ColorBar colors={workTarget?.colors?.split(",")} />
           </div>
         </div>
         <div className="sm:w-1/2 p-4 text-sm sm:text-base">
