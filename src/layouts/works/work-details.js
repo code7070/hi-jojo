@@ -27,7 +27,7 @@ export default function WorkDetail({ params = [] }) {
   const target = asPath.length > 7 ? asPath.slice(7) : "";
 
   useEffect(() => {
-    console.log("EFFET TATGET: ", target);
+    // console.log("EFFET TATGET: ", target);
     if (target) {
       workList.map((i) => {
         const catched = i.works.find((i) => i.link === target);

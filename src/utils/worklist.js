@@ -9,6 +9,7 @@ const workList = [
         stacks: "NextJS,Notion,TailwindCSS,Vercel",
         description:
           "Portofolio webapp untuk penyedia jasa makeup dan busana pernikahan",
+        colors: "#000,#fff",
       },
       {
         name: "Cari Manis",
@@ -17,6 +18,7 @@ const workList = [
         stacks: "NextJS,TailwindCSS,CSS module,Supabase,Vercel",
         description:
           "Produk portofolio pertama dari Underline, yang diharapkan dapat membantu para pengguna yang ingin mengetahui kadar gula pada produk minuman",
+        colors: "#057aff,#cce4ff,#ffd646",
       },
       {
         name: "/hi-jojo",
@@ -25,6 +27,7 @@ const workList = [
         stacks: "NextJS,TailwindCSS,daisyUI,Vercel",
         description:
           "Profile page saya pribadi yang dibangun secara dadakan, tanpa designer.",
+        colors: "#053f33,#fbbd23,#add4be,#cce4d0",
       },
     ],
   },
@@ -38,6 +41,7 @@ const workList = [
         stacks: "ReactJS,Supabase,CSS module",
         description:
           "ZuPet merupakan protipe platform untuk melakukan transaksi perawatan hingga pakan hewan peliharaan. Project ini berjalan secara internal dan sedang menunggu pendanaan untuk tahap berikutnya ;)",
+        colors: "#ffbe18,#3dabff,#333333",
       },
       {
         name: "Meat Supplier Landing Page",
@@ -46,6 +50,7 @@ const workList = [
         stacks: "ReactJS,Notion,CSS module,Client-driven",
         description:
           "Klien yang berfokus pada penyedia berbagai jenis daging sapi premium menginginkan untuk menyatukan mini-galeri produk di dalam company profile mereka.",
+        colors: "#ee1d23,#859d8f,#edd398",
       },
     ],
   },
@@ -60,6 +65,7 @@ const workList = [
         isPrivate: true,
         description:
           "Project internal - sebuah web-app eCommerce yang menjual produk perusahaan dan rekanan.",
+        colors: "#2bbecb,#dbf9fc,#eb008b,#fde6f3",
       },
     ],
   },

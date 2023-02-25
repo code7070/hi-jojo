@@ -1,5 +1,7 @@
 DONE - add icon private/public project
 DONE - truncate line amount description
 DONE - add linker
-- design how can project detail opened
-- add tags pages
+DONE - design how can project detail opened
+CANC - add tags pages
+
+- add palete colors

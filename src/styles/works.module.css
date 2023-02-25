@@ -85,7 +85,7 @@
 }
 
 .yearHead {
-  @apply sticky top-[67px] text-center mx-auto text-primary text-3xl font-black bg-base-100 h-[36px] z-[1];
+  @apply sticky top-[67px] text-center mx-auto text-primary text-3xl md:text-4xl font-black bg-base-100 h-[38px] z-[1];
 }
 
 .workGrouped {

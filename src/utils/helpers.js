@@ -2,7 +2,7 @@ function easing(t) {
   return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
 }
 
-export function doScroll(target, duration = 150, pos = 150) {
+export function doScroll(target, duration = 300, pos = 150) {
   const targetClient = target;
   const offset = pos || 130;
   if (targetClient != null) {

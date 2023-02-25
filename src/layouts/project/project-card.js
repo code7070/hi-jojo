@@ -10,6 +10,18 @@ const PrivateIcon = () => (
   </div>
 );
 
+const ColorBar = ({ colors }) => {
+  if (!colors || colors.length < 1) return "";
+  const eachClass = "w-8 h-2";
+  return (
+    <div className="flex items-center justify-center absolute left-[8px] bottom-[8px]">
+      {colors.slice(0, 4).map((i, index) => (
+        <div key={index} className={eachClass} style={{ backgroundColor: i }} />
+      ))}
+    </div>
+  );
+};
+
 export default function ProjectCard({
   name = "Project Title",
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
@@ -19,17 +31,24 @@ export default function ProjectCard({
   isPrivate,
   asDiv,
   link,
+  colors,
 }) {
   let evenClass = "md:translate-x-[60%]";
   if (isEven) evenClass = "md:-translate-x-[60%]";
-  const stacklist = `${stacks}`.split(",");
   const noFirstClass = isFirst ? "" : "md:-mt-44";
 
   const { push } = useRouter();
 
+  const stacklist = stacks?.split(",");
+  const colorList = colors?.split(",");
+
   const Content = () => (
     <>
-      <div className="h-[160px] bg-slate-100 relative">
+      <div
+        className="h-[180px] relative bg-slate-100"
+        style={{ backgroundColor: colors ? colorList[0] : "" }}
+      >
+        <ColorBar colors={colorList} />
         {isPrivate && <PrivateIcon />}
       </div>
       <div className="p-4 bg-white">
@@ -39,7 +58,7 @@ export default function ProjectCard({
             {description}
           </div>
         </div>
-        <div className="text-sm mt-4 font-bold tracking-wide flex flex-wrap">
+        <div className="text-xs sm:text-sm mt-2 font-medium tracking-wide flex flex-wrap">
           {stacklist.map((i, index) => {
             const isLast = index + 1 === stacklist.length;
             const classComma = isLast ? "" : "after:content-[',']";
@@ -54,7 +73,7 @@ export default function ProjectCard({
           })}
         </div>
         <div className="mt-4 text-center">
-          <button className="btn btn-wide btn-primary" onClick={navigate}>
+          <button className="btn btn-wide bg-black" onClick={navigate}>
             Details
           </button>
         </div>
@@ -62,7 +81,7 @@ export default function ProjectCard({
     </>
   );
 
-  const cardClass = `relative rounded-2xl w-[100%] border-4 border-secondary overflow-hidden max-w-xs ${evenClass} ${noFirstClass} my-4 transition-all duration-300 cursor-pointer hover:border-accent`;
+  const cardClass = `relative rounded-2xl w-[100%] overflow-hidden max-w-xs my-4 md:my-0 ${evenClass} ${noFirstClass} transition-all duration-300 cursor-pointer hover:shadow-lg`;
 
   const navigate = () => {
     document.body.style.overflow = "hidden";
