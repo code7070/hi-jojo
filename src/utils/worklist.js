@@ -3,6 +3,14 @@ const workList = [
     year: "2023",
     works: [
       {
+        name: "Akarna",
+        year: 2023,
+        link: "akarna-wedding",
+        stacks: "NextJS,Notion,TailwindCSS,Vercel",
+        description:
+          "Portofolio webapp untuk penyedia jasa makeup dan busana pernikahan",
+      },
+      {
         name: "Cari Manis",
         year: 2023,
         link: "cari-manis",
@@ -27,7 +35,7 @@ const workList = [
         name: "ZuPet",
         year: 2022,
         link: "zupet",
-        stacks: "ReactJS,Notion,CSS module",
+        stacks: "ReactJS,Supabase,CSS module",
         description:
           "ZuPet merupakan protipe platform untuk melakukan transaksi perawatan hingga pakan hewan peliharaan. Project ini berjalan secara internal dan sedang menunggu pendanaan untuk tahap berikutnya ;)",
       },

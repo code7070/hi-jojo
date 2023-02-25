@@ -23,7 +23,7 @@ export default function ProjectCard({
   let evenClass = "md:translate-x-[60%]";
   if (isEven) evenClass = "md:-translate-x-[60%]";
   const stacklist = `${stacks}`.split(",");
-  const noFirstClass = isFirst ? "" : "md:-mt-36";
+  const noFirstClass = isFirst ? "" : "md:-mt-44";
 
   const { push } = useRouter();
 
@@ -33,7 +33,7 @@ export default function ProjectCard({
         {isPrivate && <PrivateIcon />}
       </div>
       <div className="p-4 bg-white">
-        <h3 className="font-black opacity-60 text-2xl">{name}</h3>
+        <h3 className="font-black opacity-60 text-2xl line-clamp-2">{name}</h3>
         <div className="hidden sm:block">
           <div className="text-sm font-medium leading-normal opacity-80 line-clamp-2">
             {description}
@@ -62,7 +62,7 @@ export default function ProjectCard({
     </>
   );
 
-  const cardClass = `relative rounded-2xl w-[100%] border-4 border-secondary overflow-hidden max-w-xs ${evenClass} ${noFirstClass} my-6 transition-all duration-300 cursor-pointer hover:border-accent`;
+  const cardClass = `relative rounded-2xl w-[100%] border-4 border-secondary overflow-hidden max-w-xs ${evenClass} ${noFirstClass} my-4 transition-all duration-300 cursor-pointer hover:border-accent`;
 
   const navigate = () => {
     document.body.style.overflow = "hidden";
@@ -70,15 +70,16 @@ export default function ProjectCard({
   };
 
   const Card = ({ children }) => {
+    const id = `works-${link}`;
     if (asDiv)
       return (
-        <div id={`works-${link}`} className={cardClass}>
+        <div id={id} className={cardClass} onClick={navigate}>
           {children}
         </div>
       );
     else
       return (
-        <section id={`works-${link}`} className={cardClass}>
+        <section id={id} className={cardClass} onClick={navigate}>
           {children}
         </section>
       );

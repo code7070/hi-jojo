@@ -65,7 +65,7 @@ export default function WorkContent({ workTarget = {} }) {
             ))}
           </div>
         </div>
-        <div className="sm:w-1/2 p-4 font-medium text-sm sm:text-lg">
+        <div className="sm:w-1/2 p-4 text-sm sm:text-base">
           {workTarget.description}
         </div>
       </div>
