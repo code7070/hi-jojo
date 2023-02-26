@@ -46,13 +46,15 @@ const CardBody = ({ name, description, stacks, navigate, isPrivate }) => {
   return (
     <div className="bg-white relative">
       {isPrivate && <PrivateIcon />}
-      <h3 className="font-black opacity-60 text-2xl line-clamp-2">{name}</h3>
-      <div className="hidden sm:block">
+      <h3 className="font-black text-primary opacity-90 block text-xl md:text-2xl line-clamp-2">
+        {name}
+      </h3>
+      <div className="hidden md:block">
         <div className="text-sm font-medium leading-normal opacity-80 line-clamp-2">
           {description}
         </div>
       </div>
-      <div className="text-xs sm:text-sm mt-2 font-medium tracking-wide flex flex-wrap">
+      <div className="text-xs md:text-sm mt-2 font-medium tracking-wide flex flex-wrap">
         {stacklist.map((i, index) => {
           const isLast = index + 1 === stacklist.length;
           const classComma = isLast ? "" : "after:content-[',']";
@@ -113,7 +115,7 @@ export default function ProjectCard({
   );
 
   // const cardClass = `relative rounded-2xl w-[100%] overflow-hidden max-w-xs my-4 md:my-0 ${evenClass} ${noFirstClass} transition-all duration-300 cursor-pointer hover:shadow-lg`;
-  const cardClass = `relative card w-72 md:w-80 bg-white my-4 md:my-0 ${evenClass} ${noFirstClass} transition-all duration-300 cursor-pointer hover:shadow-xl`;
+  const cardClass = `relative card w-72 md:w-80 bg-white my-4 md:my-0 ${evenClass} ${noFirstClass} transition-all duration-300 cursor-pointer transition-all hover:shadow-xl translate-x-[10px] sm:translate-x-[0px]`;
 
   const Card = ({ children }) => {
     const id = `works-${link}`;

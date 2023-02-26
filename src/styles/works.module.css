@@ -77,17 +77,18 @@
 
 .year::before {
   content: "";
-  @apply absolute w-1 left-[50%] top-[54px] bg-accent;
+  @apply absolute w-1 left-[38px] sm:left-[50%] top-[38px] sm:top-[54px] bg-accent;
   transform: translate(-50%);
   height: calc(100% - 54px);
-  /* background: linear-gradient(to bottom, #cce4d0, #ecf5f0, #cce4d0); */
-  /* background-size: 100% 40px; */
+  background: linear-gradient(to bottom, #cce4d0, #43aa8b);
+  background-size: 100px 30px;
 }
 
 .yearHead {
-  @apply sticky top-[67px] text-center mx-auto text-primary text-3xl md:text-4xl font-black bg-base-100 h-[38px] z-[1];
+  @apply sticky top-[67px] mx-auto text-primary text-3xl md:text-4xl font-black bg-base-100 h-[38px] z-[1];
+  @apply text-left px-8 sm:text-center;
 }
 
 .workGrouped {
-  @apply py-12 flex items-center justify-center flex-col;
+  @apply py-6 sm:py-12 flex items-center justify-center flex-col;
 }
