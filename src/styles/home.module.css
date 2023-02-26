@@ -65,7 +65,8 @@
 }
 
 .homeCard {
-  @apply relative mb-3 rounded-2xl overflow-hidden w-[90%] xl:w-[312px] mx-auto;
+  @apply relative mb-3 rounded-2xl overflow-hidden mx-auto;
+  @apply w-[95%] sm:w-[90%] xl:w-[312px];
 }
 
 .homeCard.left {
@@ -77,11 +78,15 @@
 }
 
 .projectItem {
-  @apply relative py-3 px-6 font-semibold transition-all duration-200 hover:text-white hover:bg-primary;
+  @apply relative py-4 px-6 font-semibold transition-all duration-200 hover:text-white hover:bg-primary;
 }
 
 .projectItem .borders {
-  @apply h-px bg-primary w-[85%] absolute left-[50%] bottom-0 -translate-x-[50%];
+  @apply h-px bg-primary w-[100%] absolute left-[50%] bottom-0 -translate-x-[50%] opacity-20;
+}
+
+.projectLink:last-child .projectItem .borders {
+  @apply bg-transparent;
 }
 
 .homeCard.profile {

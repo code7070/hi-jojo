@@ -7,8 +7,7 @@ const workList = [
         year: 2023,
         link: "akarna-wedding",
         stacks: "NextJS,Notion,TailwindCSS,Vercel",
-        description:
-          "Portofolio webapp untuk penyedia jasa makeup dan busana pernikahan",
+        description: "Webapp untuk penyedia jasa makeup dan busana pernikahan",
         colors: "#BF7E1B,#0f0f0f,#a5a5a5",
       },
       {
@@ -40,7 +39,7 @@ const workList = [
         link: "zupet",
         stacks: "ReactJS,Supabase,CSS module",
         description:
-          "ZuPet merupakan protipe platform untuk melakukan transaksi perawatan hingga pakan hewan peliharaan. Project ini berjalan secara internal dan sedang menunggu pendanaan untuk tahap berikutnya ;)",
+          "Platform untuk melakukan transaksi perawatan hingga pakan hewan peliharaan. Project ini berjalan secara internal dan sedang menunggu pendanaan untuk tahap berikutnya ;)",
         colors: "#ffbe18,#3dabff,#333333",
       },
       {

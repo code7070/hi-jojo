@@ -3,22 +3,30 @@ import workList from "@utils/worklist";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-const Item = ({ name, link, year }) => {
+const Item = ({ name, link, year, description }) => {
   return (
-    <Link href={`/works/${link}`} shallow={true}>
+    <Link href={`/works/${link}`} shallow={true} className={style.projectLink}>
       <div className={style.projectItem}>
-        {/* <div className={style.bgRipple} /> */}
         <div className={style.borders} />
         <div className="relative flex justify-between items-center">
-          <div className="flex-1 line-clamp-1 pr-3">{name}</div>
+          <div className="flex-1 line-clamp-1 pr-3 font-bold text-lg">
+            {name}
+          </div>
           <div className="text-xs">{year}</div>
+        </div>
+        <div className="opacity-50 font-normal text-xs sm:text-sm line-clamp-1">
+          {description}
         </div>
       </div>
     </Link>
   );
 };
 
-const projectList = [workList[0].works[0], workList[1].works[0]];
+const projectList = [
+  workList[0].works[0],
+  workList[1].works[0],
+  workList[1].works[1],
+];
 
 export default function CardProject({}) {
   const router = useRouter();

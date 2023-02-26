@@ -7,7 +7,7 @@ const chatList = [
   { text: "i use ReactJS, NextJS often", type: "end" },
   { text: "Sass, TailwindCSS for styling", type: "end" },
   { text: "now, i trying explore Angular", type: "end" },
-  { text: "COOOL!! Let's talk", type: "start" },
+  { text: "Cool! How can i contact you?", type: "start" },
 ];
 
 const transition = (num, variants) => ({

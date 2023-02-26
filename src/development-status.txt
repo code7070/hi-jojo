@@ -4,4 +4,11 @@ DONE - add linker
 DONE - design how can project detail opened
 CANC - add tags pages
 
-- add palete colors
+DONE - add palete colors
+Navigation header
+Footer list
+Iconize stacks
+Keypoint self story - gantiin box article
+Social media
+Contact form
+Pisahin article
