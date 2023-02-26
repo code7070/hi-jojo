@@ -40,7 +40,7 @@ function WorklistView() {
       <div className="headerPage mt-20 mb-16 sm:mb-32 text-left sm:text-center px-8">
         <div className={styles.headline1}>What i do, called</div>
         <div>
-          <div className={styles.headline2}>works</div>
+          <h2 className={styles.headline2}>Works</h2>
         </div>
       </div>
       <div className={styles.workPerYear}>

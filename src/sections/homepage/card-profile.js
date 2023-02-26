@@ -4,7 +4,7 @@ import style from "@styles/home.module.css";
 const Frontside = () => (
   <div className={style.profileFront}>
     <div className="absolute left-0 top-0 w-full p-6 text-white">
-      <div className="text-5xl font-bold mb-1">Jojo</div>
+      <h3 className="text-5xl font-bold mb-1">Jojo</h3>
       <div className="text-xl font-semibold opacity-30">Frontend Developer</div>
     </div>
     <div className="absolute left-0 bottom-[64px] w-full opacity-90">

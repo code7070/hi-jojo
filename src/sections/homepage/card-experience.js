@@ -94,8 +94,10 @@ export default function CardExperience({ toggleFlip }) {
       className={`${style.homeCard} ${style.right} bg-secondary-focus transition-all duration-500 xl:mt-10`}
     >
       <div className="p-6 text-accent-content font-extrabold">
-        <div className="text-4xl opacity-70">Four years</div>
-        <div className="text-2xl opacity-40 mb-6">as an UI maker</div>
+        <h3 className="block">
+          <div className="text-4xl opacity-70">Four years</div>
+          <div className="text-2xl opacity-40 mb-6">as an UI maker</div>
+        </h3>
         {chatList.map((item, index) => (
           <Bubble item={item} index={index} key={index} animate={variants} />
         ))}

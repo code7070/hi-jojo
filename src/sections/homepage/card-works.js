@@ -34,7 +34,7 @@ export default function CardProject({}) {
   return (
     <div className={`${style.homeCard} ${style.left} bg-secondary  min-h-16 `}>
       <div className="pt-6 px-6">
-        <div className="text-4xl font-extrabold opacity-70 mb-8">Works</div>
+        <h3 className="text-4xl font-extrabold opacity-70 mb-8">Works</h3>
       </div>
       <div className="mb-8">
         {projectList.slice(0, 3).map((item) => (
