@@ -1,6 +1,5 @@
 import Image from "next/image";
 import style from "@styles/home.module.css";
-import { useState } from "react";
 
 const Frontside = () => (
   <div className={style.profileFront}>
@@ -26,17 +25,13 @@ const Backside = () => (
   </div>
 );
 
-export default function CardProfile() {
-  const [flip, setFlip] = useState(false);
-
-  const toggleFlip = () => setFlip(!flip);
+export default function CardProfile({ toggleFlip, flip }) {
+  const fullClass = `${style.homeCard} ${style.left} ${style.profile} ${
+    flip ? style.flip : ""
+  }`;
 
   return (
-    <div
-      className={`${style.homeCard} ${style.left} ${style.profile} ${
-        flip ? style.flip : ""
-      }`}
-    >
+    <div className={fullClass} id="homeCardProfile">
       <div className="relative w-full h-full">
         <div className={style.profileInner}>
           <Frontside />

@@ -43,7 +43,7 @@ const Bubble = ({ item, index, animate }) => {
   );
 };
 
-const ResponseView = ({ variants, setVariants }) => {
+const ResponseView = ({ variants, setVariants, toggleFlip }) => {
   const reload = () => {
     setVariants("initial");
     setTimeout(setVariants, 1000, "animated");
@@ -77,6 +77,7 @@ const ResponseView = ({ variants, setVariants }) => {
         <button
           className="btn btn-primary border-2 w-full !font-bold tracking-wide"
           type="button"
+          onClick={toggleFlip}
         >
           Contact Here
         </button>
@@ -85,9 +86,9 @@ const ResponseView = ({ variants, setVariants }) => {
   );
 };
 
-export default function CardExperience() {
+export default function CardExperience({ toggleFlip }) {
   const [variants, setVariants] = useState("forced");
-
+  const vars = { variants, setVariants, toggleFlip };
   return (
     <div
       className={`${style.homeCard} ${style.right} bg-secondary-focus transition-all duration-500 xl:mt-10`}
@@ -98,7 +99,7 @@ export default function CardExperience() {
         {chatList.map((item, index) => (
           <Bubble item={item} index={index} key={index} animate={variants} />
         ))}
-        <ResponseView variants={variants} setVariants={setVariants} />
+        <ResponseView {...vars} />
       </div>
     </div>
   );
