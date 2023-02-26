@@ -9,7 +9,7 @@ const workList = [
         stacks: "NextJS,Notion,TailwindCSS,Vercel",
         description:
           "Portofolio webapp untuk penyedia jasa makeup dan busana pernikahan",
-        colors: "#000,#fff",
+        colors: "#BF7E1B,#0f0f0f,#a5a5a5",
       },
       {
         name: "Cari Manis",
@@ -49,7 +49,7 @@ const workList = [
         link: "meat-supplier-gpw",
         stacks: "ReactJS,Notion,CSS module,Client-driven",
         description:
-          "Klien yang berfokus pada penyedia berbagai jenis daging sapi premium menginginkan untuk menyatukan mini-galeri produk di dalam company profile mereka.",
+          "Landing page untuk penyedia daging sapi premium yang menginginkan untuk menyatukan mini-galeri produk di dalam company profile mereka.",
         colors: "#ee1d23,#859d8f,#edd398",
       },
     ],
