@@ -121,13 +121,13 @@ export default function ProjectCard({
     const id = `works-${link}`;
     if (asDiv)
       return (
-        <div id={id} className={cardClass} onClick={navigate}>
+        <div id={id} className={cardClass}>
           {children}
         </div>
       );
     else
       return (
-        <section id={id} className={cardClass} onClick={navigate}>
+        <section id={id} className={cardClass}>
           {children}
         </section>
       );

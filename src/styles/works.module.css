@@ -68,7 +68,7 @@
 */
 /*  */
 .workPerYear {
-  @apply mt-20;
+  @apply mt-16 sm:mt-20;
 }
 
 .year {

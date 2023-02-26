@@ -4,6 +4,7 @@ import { Montserrat } from "@next/font/google";
 import Header from "@components/header";
 import "nprogress/nprogress.css";
 import "@styles/globals.css";
+import Footer from "@components/footer/footer";
 
 const font = Montserrat({
   subsets: ["latin"],
@@ -22,6 +23,7 @@ export default function App({ Component, pageProps }) {
         <Component {...pageProps} />
       </main>
       <Header />
+      <Footer />
     </>
   );
 }

@@ -42,9 +42,9 @@ export default function WorkContent({ workTarget = {} }) {
       <div
         className={`${addTransition(
           "block sm:flex items-start ease-in overflow-hidden"
-        )} ${isViewGallery ? "h-[0%] opacity-0" : "h-[40%]"}`}
+        )} ${isViewGallery ? "h-[0%] opacity-0" : "h-[50%] sm:h-[40%]"}`}
       >
-        <div className="sm:w-1/2 p-4">
+        <div className="sm:w-1/2 pb-0 sm:pb-4 p-4">
           <div className="text-2xl sm:text-5xl font-extrabold sm:mb-4">
             {hasWork ? (
               workTarget.name

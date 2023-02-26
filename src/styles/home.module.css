@@ -83,3 +83,36 @@
 .projectItem .borders {
   @apply h-px bg-primary w-[85%] absolute left-[50%] bottom-0 -translate-x-[50%];
 }
+
+.homeCard.profile {
+  @apply bg-primary h-[460px] xl:-mt-10;
+}
+
+.homeCard.profile .profileInner {
+  @apply relative w-full h-full transition-all duration-500;
+  transform-style: preserve-3d;
+}
+
+.homeCard.profile .profileFront,
+.homeCard.profile .profileBack {
+  @apply absolute left-0 top-0 w-full h-full;
+  backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.homeCard.profile .profileBack {
+  transform: rotateY(180deg);
+}
+
+.homeCard.profile .cta {
+  @apply btn btn-ghost btn-lg w-full font-black text-white rounded-none;
+}
+
+.homeCard.profile.flip .profileInner {
+  transform: rotateY(180deg);
+}
+
+.homeCard.profile.flip .cta {
+  @apply btn-error;
+}
