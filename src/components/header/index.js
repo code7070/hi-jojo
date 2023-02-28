@@ -28,8 +28,10 @@ export default function Header() {
           <Link href="/">
             <div
               className={`${
-                atHome ? "bg-primary" : "bg-secondary text-primary"
-              } text-secondary ${linkClass} ${atHome ? "w-16" : "w-24"}`}
+                atHome
+                  ? "bg-primary text-secondary w-16"
+                  : "bg-secondary text-primary w-24"
+              }  ${linkClass}`}
             >
               <div style={{ verticalAlign: "middle" }}>
                 {atHome ? "/" : "../"}

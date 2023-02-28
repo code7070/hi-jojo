@@ -1,14 +1,14 @@
 import Router from "next/router";
 import nProgress from "nprogress";
-import { Montserrat } from "@next/font/google";
+import { Plus_Jakarta_Sans as Font } from "@next/font/google";
 import Header from "@components/header";
 import "nprogress/nprogress.css";
 import "@styles/globals.css";
 import Footer from "@components/footer/footer";
 
-const font = Montserrat({
+const font = Font({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "block",
 });
 
