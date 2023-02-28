@@ -19,7 +19,12 @@ export default function Home() {
               <div className={styles.headingLine3}>build your own.</div>
             </h2>
             <div className="mt-4 font-semibold text-base text-center mx-auto xl:mx-0 xl:text-left xl:text-lg max-w-md transition-all xl:block">
-              A frontend developer who try to help digitalize your&nbsp;
+              A frontend developer who loves{" "}
+              <span className="word-underline animated">
+                &lt;CleanCode /&gt;
+              </span>
+              <br />
+              and make &nbsp;
               <span className="word-underline animated">awe-some-thing</span>.
             </div>
           </div>

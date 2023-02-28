@@ -1,12 +1,24 @@
 import { motion } from "framer-motion";
 import style from "@styles/home.module.css";
 import { useState } from "react";
+import ReactIcon from "@icons/react-icon";
+import TailwindIcon from "@icons/tailwind-icon";
+import NextJsIcon from "@icons/next-icon";
+import VscodeIcon from "@icons/vscode-icon";
+import FigmaIcon from "@icons/figma";
 
 const chatList = [
   { text: "What stacks have u used before?", type: "start" },
-  { text: "i use ReactJS, NextJS often", type: "end" },
-  { text: "Sass, TailwindCSS for styling", type: "end" },
-  { text: "now, i trying explore Angular", type: "end" },
+  {
+    text: (
+      <div className="[&>svg]:w-6 [&>svg]:h-6 flex gap-2 flex-wrap">
+        I use <ReactIcon /> <NextJsIcon /> <TailwindIcon /> <VscodeIcon />{" "}
+        <FigmaIcon />
+      </div>
+    ),
+    type: "end",
+  },
+  { text: "now, i trying explore Angular too", type: "end" },
   { text: "Cool! How can i contact you?", type: "start" },
 ];
 

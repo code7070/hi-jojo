@@ -50,7 +50,10 @@ body {
   from {
     @apply w-0;
   }
-  to {
+  50% {
+    @apply w-[110%];
+  }
+  100% {
     @apply w-[90%];
   }
 }
@@ -61,7 +64,7 @@ body {
 }
 
 .word-underline.animated::before {
-  animation: underlineAnimated 1s linear 3s 1 forwards;
+  animation: underlineAnimated 0.5s linear 2.5s 1 forwards;
 }
 
 #nprogress .bar {
