@@ -20,6 +20,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <main className={font.className}>
+        <div className="top-ornament" />
         <Component {...pageProps} />
       </main>
       <Header />

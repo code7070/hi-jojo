@@ -27,9 +27,9 @@ export default function Header() {
         <div className="container flex items-center justify-start h-9 gap-4">
           <Link href="/">
             <div
-              className={`bg-primary text-secondary ${linkClass} ${
-                atHome ? "w-16" : "w-24"
-              }`}
+              className={`${
+                atHome ? "bg-primary" : "bg-secondary text-primary"
+              } text-secondary ${linkClass} ${atHome ? "w-16" : "w-24"}`}
             >
               <div style={{ verticalAlign: "middle" }}>
                 {atHome ? "/" : "../"}

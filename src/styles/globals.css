@@ -27,7 +27,7 @@ body {
 }
 
 .headerPage {
-  @apply text-4xl sm:text-5xl lg:text-6xl font-bold transition-all;
+  @apply text-3xl sm:text-5xl lg:text-6xl font-bold transition-all;
 }
 
 .projectTitle {
@@ -73,4 +73,16 @@ body {
 
 #nprogress .spinner-icon {
   @apply border-primary border-l-transparent;
+}
+
+.top-ornament {
+  @apply fixed left-0 top-0 w-full h-[50%] flex flex-wrap gap-4 opacity-70;
+  background: url("/icons/grid.svg");
+  background-repeat: repeat;
+  background-size: contain;
+  background-position: left top;
+}
+
+.top-ornament > div {
+  /* @apply rounded-full bg-primary w-4 h-4 opacity-50; */
 }
