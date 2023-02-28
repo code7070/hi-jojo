@@ -92,3 +92,107 @@
 .workGrouped {
   @apply py-6 sm:py-12 flex items-center justify-center flex-col;
 }
+
+/* NEW WORK STYLING */
+
+.workSection {
+  @apply relative flex sm:gap-3 mb-28 last:mb-0;
+}
+
+.yearWrapper {
+  @apply sticky top-[68px];
+}
+
+.yearSet {
+  @apply absolute top-0 left-0 translate-x-[-25%] translate-y-[-75%] text-8xl font-extrabold opacity-30;
+}
+
+.workOuterWrapper {
+  @apply relative w-full flex flex-col gap-3 mx-2 sm:mx-0;
+}
+
+.workInnerWrapper {
+  @apply flex gap-3 flex-col sm:flex-row;
+}
+
+.workBox {
+  @apply relative bg-accent rounded-xl p-4 transition-all duration-200 overflow-hidden;
+  @apply w-2/3 mx-auto sm:w-1/2 sm:mx-0;
+  @apply hover:ring-4 hover:ring-primary;
+}
+
+.workBox .media {
+  @apply relative w-full h-44;
+}
+
+.workBox .info {
+  @apply rounded-xl absolute bg-secondary h-full transition-all duration-200 p-4;
+  @apply left-[50%] bottom-[10px] translate-x-[-50%] h-[40%];
+  width: calc(100% - 20px);
+}
+
+.workBox .info .name {
+  @apply font-bold text-lg;
+}
+
+/* ODD SECTION */
+
+.workSection:nth-child(odd)
+  .workInnerWrapper:nth-child(odd)
+  .workBox:nth-child(odd),
+.workSection:nth-child(odd)
+  .workInnerWrapper:nth-child(even)
+  .workBox:nth-child(even) {
+  @apply sm:w-2/3;
+}
+
+.workSection:nth-child(odd)
+  .workInnerWrapper:nth-child(odd)
+  .workBox:nth-child(even),
+.workSection:nth-child(odd)
+  .workInnerWrapper:nth-child(even)
+  .workBox:nth-child(odd) {
+  @apply sm:w-1/3;
+}
+
+/* EVEN SECTION */
+
+.workSection:nth-child(even)
+  .workInnerWrapper:nth-child(odd)
+  .workBox:nth-child(odd),
+.workSection:nth-child(even)
+  .workInnerWrapper:nth-child(even)
+  .workBox:nth-child(even) {
+  @apply sm:w-1/3;
+}
+
+.workSection:nth-child(even)
+  .workInnerWrapper:nth-child(odd)
+  .workBox:nth-child(even),
+.workSection:nth-child(even)
+  .workInnerWrapper:nth-child(even)
+  .workBox:nth-child(odd) {
+  @apply sm:w-2/3;
+}
+
+/* WORK BOX CONTENT */
+
+.workSection:nth-child(odd)
+  .workInnerWrapper:nth-child(odd)
+  .workBox:nth-child(odd)
+  .info,
+.workSection:nth-child(odd)
+  .workInnerWrapper:nth-child(even)
+  .workBox:nth-child(even)
+  .info,
+.workSection:nth-child(even)
+  .workInnerWrapper:nth-child(odd)
+  .workBox:nth-child(even)
+  .info,
+.workSection:nth-child(even)
+  .workInnerWrapper:nth-child(even)
+  .workBox:nth-child(odd)
+  .info {
+  @apply sm:right-0 sm:top-[50%] sm:translate-y-[-50%] sm:w-[35%];
+  @apply sm:rounded-l-none;
+}
