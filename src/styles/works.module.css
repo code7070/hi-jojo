@@ -126,7 +126,7 @@
 }
 
 .workBox .info {
-  @apply rounded-xl absolute bg-secondary h-full transition-all duration-200 p-4;
+  @apply rounded-xl absolute bg-secondary transition-all duration-200 p-4;
   @apply left-[50%] bottom-[10px] translate-x-[-50%] h-[40%];
   width: calc(100% - 20px);
 }
@@ -193,6 +193,6 @@
   .workInnerWrapper:nth-child(even)
   .workBox:nth-child(odd)
   .info {
-  @apply sm:right-0 sm:top-[50%] sm:translate-y-[-50%] sm:w-[35%];
+  @apply sm:right-0 sm:top-[50%] sm:translate-y-[-50%] sm:translate-x-0 sm:left-auto sm:w-[35%] sm:h-full;
   @apply sm:rounded-l-none;
 }
