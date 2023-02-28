@@ -7,6 +7,16 @@ export default function WorkContent({ workTarget = {} }) {
 
   useEffect(() => {
     setView(false);
+
+    const fn = (e) => {
+      console.log("LISTENER: ", e);
+    };
+
+    if (workTarget) {
+      window.addEventListener("keypress", fn);
+    } else window.removeEventListener("keypress", fn);
+
+    return () => window.removeEventListener("keypress", fn);
   }, [workTarget]);
 
   const hasWork = Object.keys(workTarget).length > 0;
@@ -45,6 +55,12 @@ export default function WorkContent({ workTarget = {} }) {
         )} ${isViewGallery ? "h-[0%] opacity-0" : "h-[50%] sm:h-[40%]"}`}
       >
         <div className="sm:w-1/2 pb-0 sm:pb-4 p-4">
+          <div className="block sm:hidden">xs</div>
+          <div className="hidden sm:block md:hidden">sm</div>
+          <div className="hidden md:block lg:hidden">md</div>
+          <div className="hidden lg:block xl:hidden">lg</div>
+          <div className="hidden xl:block 2xl:hidden">xl</div>
+          <div className="hidden 2xl:block">2xl</div>
           <div className="text-2xl sm:text-5xl font-extrabold sm:mb-4">
             {hasWork ? (
               workTarget.name

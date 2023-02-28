@@ -7,7 +7,7 @@ const Frontside = () => (
       <h3 className="text-5xl font-bold mb-1">Jojo</h3>
       <div className="text-xl font-semibold opacity-30">Frontend Developer</div>
     </div>
-    <div className="absolute left-0 bottom-[64px] w-full opacity-90">
+    <div className="absolute left-0 bottom-[48px] w-full opacity-90 [&>img]:w-full">
       <Image
         alt="Jojo"
         src="/profile/profile-bw.webp"
