@@ -1,0 +1,88 @@
+.workSection {
+  @apply relative flex sm:gap-3 mb-28 last:mb-0;
+}
+
+.yearWrapper {
+  @apply sticky top-[68px];
+}
+
+.yearSet {
+  @apply absolute top-0 left-0 translate-x-[-25%] translate-y-[-75%] text-8xl font-extrabold opacity-30;
+}
+
+.workOuterWrapper {
+  @apply relative w-full flex flex-col gap-3 mx-2 sm:mx-0;
+}
+
+.workInnerWrapper {
+  @apply flex gap-3 flex-col sm:flex-row;
+}
+
+.workBox {
+  @apply relative bg-accent rounded-xl p-4 transition-all duration-200 overflow-hidden;
+  @apply w-3/4 mb-6 sm:mb-0 mx-auto sm:w-1/2 sm:mx-0;
+  @apply hover:ring-4 hover:ring-primary;
+  /* @apply -mt-40 first:mt-0; */
+
+  .media {
+    @apply relative w-full h-64;
+  }
+
+  .info {
+    @apply rounded-xl bg-secondary transition-all duration-200 p-4 h-[40%];
+    @apply absolute left-[50%] top-0 w-full translate-x-[-50%] rounded-b-none;
+    @apply sm:bottom-0 sm:top-auto sm:w-full sm:rounded-t-none rounded-b-xl;
+
+    .name {
+      @apply font-bold text-lg sm:text-xl;
+    }
+
+    .desc {
+      @apply text-sm line-clamp-1 mt-1;
+    }
+  }
+}
+
+/* ODD SECTION */
+
+.infoInRight {
+  @apply sm:right-0 sm:top-[50%] sm:translate-y-[-50%] sm:translate-x-0 sm:left-auto sm:w-[40%] sm:h-full;
+  @apply sm:rounded-l-none;
+
+  .desc {
+    @apply sm:line-clamp-3;
+  }
+}
+
+.workSection:nth-child(odd) {
+  .workInnerWrapper:nth-child(odd) .workBox:nth-child(odd),
+  .workInnerWrapper:nth-child(even) .workBox:nth-child(even) {
+    @apply sm:w-2/3;
+
+    .info {
+      @extend .infoInRight;
+    }
+  }
+
+  .workInnerWrapper:nth-child(odd) .workBox:nth-child(even),
+  .workInnerWrapper:nth-child(even) .workBox:nth-child(odd) {
+    @apply sm:w-1/3;
+  }
+}
+
+/* EVEN SECTION */
+.workSection:nth-child(even) {
+  .workInnerWrapper:nth-child(odd) .workBox:nth-child(odd),
+  .workInnerWrapper:nth-child(even) .workBox:nth-child(even) {
+    @apply sm:w-1/3;
+  }
+
+  .workInnerWrapper:nth-child(odd) .workBox:nth-child(even),
+  .workInnerWrapper:nth-child(even) .workBox:nth-child(odd) {
+    @apply sm:w-2/3;
+
+    .info {
+      @extend .infoInRight;
+    }
+  }
+}
