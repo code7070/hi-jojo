@@ -7,6 +7,8 @@ const WorkPart = ({ work, open, setOpen }) => {
 
   const isOpen = open === work.link;
 
+  const firstColor = work.colors.split(",")[0];
+
   return (
     <div
       className={`bg-white translate-all duration-200 overflow-hidden ${
@@ -14,12 +16,14 @@ const WorkPart = ({ work, open, setOpen }) => {
       }`}
     >
       <button
-        className="flex btn rounded-none btn-lg btn-ghost w-full text-left m-0 outline-none normal-case"
+        className={`flex btn btn-lg rounded-none w-full text-left m-0 outline-none normal-case ${
+          isOpen ? "btn-primary bg-primary-focus" : "btn-ghost"
+        }`}
         onClick={toggle}
       >
         <div className="flex-1">{work.name}</div>
         <div
-          className={`text-primary [&>svg]:w-4 [&>svg]:h-4 transition-all ${
+          className={`[&>svg]:w-4 [&>svg]:h-4 transition-all ${
             isOpen ? "rotate-90" : "rotate-0"
           }`}
         >
@@ -27,8 +31,20 @@ const WorkPart = ({ work, open, setOpen }) => {
         </div>
       </button>
       <div
-        className={`bg-slate-100 transition-all ${isOpen ? "h-56" : "h-0"}`}
-      ></div>
+        className={`relative transition-all px-6 py-4 overflow-hidden ${
+          isOpen ? "h-56 bg-primary" : "h-0"
+        }`}
+      >
+        <div className="line-clamp-3 text-primary-content">
+          {work.description}
+        </div>
+        <div className="flex justify-end absolute right-0 bottom-0 p-6">
+          <button className="btn btn-secondary [&>svg]:w-4 [&>svg]:h-4">
+            <span className="mr-2 font-bold">Detail</span>
+            <ChevronRight />
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
