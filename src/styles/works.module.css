@@ -119,6 +119,7 @@
   @apply relative bg-accent rounded-xl p-4 transition-all duration-200 overflow-hidden;
   @apply w-3/4 mb-6 sm:mb-0 mx-auto sm:w-1/2 sm:mx-0;
   @apply hover:ring-4 hover:ring-primary;
+  /* @apply -mt-40 first:mt-0; */
 }
 
 .workBox .media {
@@ -126,13 +127,17 @@
 }
 
 .workBox .info {
-  @apply rounded-xl absolute bg-secondary transition-all duration-200 p-4;
-  @apply left-[50%] bottom-[10px] translate-x-[-50%] h-[40%];
-  width: calc(100% - 20px);
+  @apply rounded-xl bg-secondary transition-all duration-200 p-4 h-[40%];
+  @apply absolute left-[50%] top-0 w-full translate-x-[-50%] rounded-b-none;
+  @apply sm:bottom-[10px] sm:top-auto sm:w-[calc(100%-20px)] sm:rounded-b-xl;
 }
 
 .workBox .info .name {
-  @apply font-bold text-lg;
+  @apply font-bold text-lg sm:text-xl;
+}
+
+.workBox .info .desc {
+  @apply text-sm line-clamp-1 mt-1;
 }
 
 /* ODD SECTION */
@@ -193,6 +198,29 @@
   .workInnerWrapper:nth-child(even)
   .workBox:nth-child(odd)
   .info {
-  @apply sm:right-0 sm:top-[50%] sm:translate-y-[-50%] sm:translate-x-0 sm:left-auto sm:w-[35%] sm:h-full;
+  @apply sm:right-0 sm:top-[50%] sm:translate-y-[-50%] sm:translate-x-0 sm:left-auto sm:w-[40%] sm:h-full;
   @apply sm:rounded-l-none;
+}
+
+.workSection:nth-child(odd)
+  .workInnerWrapper:nth-child(odd)
+  .workBox:nth-child(odd)
+  .info
+  .desc,
+.workSection:nth-child(odd)
+  .workInnerWrapper:nth-child(even)
+  .workBox:nth-child(even)
+  .info
+  .desc,
+.workSection:nth-child(even)
+  .workInnerWrapper:nth-child(odd)
+  .workBox:nth-child(even)
+  .info
+  .desc,
+.workSection:nth-child(even)
+  .workInnerWrapper:nth-child(even)
+  .workBox:nth-child(odd)
+  .info
+  .desc {
+  @apply sm:line-clamp-3;
 }

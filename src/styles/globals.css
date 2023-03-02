@@ -64,7 +64,7 @@ body {
 }
 
 .word-underline.animated::before {
-  animation: underlineAnimated 0.5s linear 2.5s 1 forwards;
+  animation: underlineAnimated 0.5s linear 1.75s 1 forwards;
 }
 
 #nprogress .bar {

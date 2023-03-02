@@ -17,7 +17,7 @@ export default function Header() {
   const pageLinks = (href) => {
     let classes = `${linkClass} py-2 px-4 border-2 border-transparent hover:bg-secondary`;
     if (href === asPath)
-      classes = `${classes} bg-accent text-white hover:bg-accent`;
+      classes = `${classes} bg-primary text-white hover:bg-primary`;
     return classes;
   };
 
