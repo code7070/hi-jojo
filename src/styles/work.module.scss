@@ -34,11 +34,15 @@
     @apply sm:bottom-0 sm:top-auto sm:w-full sm:rounded-t-none rounded-b-xl;
 
     .name {
-      @apply font-bold text-lg sm:text-xl;
+      @apply font-bold text-lg sm:text-2xl;
     }
 
     .desc {
-      @apply text-sm line-clamp-1 mt-1;
+      @apply hidden text-sm mt-1;
+    }
+
+    .cta {
+      @apply btn btn-primary btn-sm w-full mt-4;
     }
   }
 }
@@ -50,7 +54,7 @@
   @apply sm:rounded-l-none;
 
   .desc {
-    @apply sm:line-clamp-3;
+    @apply block sm:line-clamp-3;
   }
 }
 

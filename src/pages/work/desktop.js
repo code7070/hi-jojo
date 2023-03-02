@@ -23,6 +23,7 @@ const WorkGrid = ({ works = [] }) => {
               <div className={styles.info}>
                 <div className={styles.name}>{item.name}</div>
                 <div className={styles.desc}>{item.description}</div>
+                <button className={styles.cta}>Detail</button>
               </div>
             </div>
           ))}

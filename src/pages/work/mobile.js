@@ -7,8 +7,6 @@ const WorkPart = ({ work, open, setOpen }) => {
 
   const isOpen = open === work.link;
 
-  const firstColor = work.colors.split(",")[0];
-
   return (
     <div
       className={`bg-white translate-all duration-200 overflow-hidden ${
