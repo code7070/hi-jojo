@@ -2,9 +2,10 @@ import Router from "next/router";
 import nProgress from "nprogress";
 import { Plus_Jakarta_Sans as Font } from "@next/font/google";
 import Header from "@components/header";
+import Footer from "@components/footer/footer";
 import "nprogress/nprogress.css";
 import "@styles/globals.css";
-import Footer from "@components/footer/footer";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 
 const font = Font({
   subsets: ["latin"],

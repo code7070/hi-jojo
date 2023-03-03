@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGamepad, faWindowMaximize } from "@fortawesome/free-solid-svg-icons";
 import { Fragment, useState } from "react";
 import workList from "@utils/worklist";
 import ChevronRight from "@icons/chevron-right";
@@ -13,8 +15,14 @@ const WorkPart = ({ work, open, setOpen }) => {
   return (
     <div className={classer(styles.workPart)}>
       <button className={classer(styles.btnHead)} onClick={toggle}>
-        <div className="flex-1">{work.name}</div>
-        <div>
+        <div className="flex-1 line-clamp-1">{work.name}</div>
+        <div className="flex items-center">
+          <div className="btn btn-primary btn-circle btn-sm mr-4">
+            <FontAwesomeIcon
+              icon={work.type === "Technical" ? faGamepad : faWindowMaximize}
+              size="lg"
+            />
+          </div>
           <div className={classer(styles.arrowHead)}>
             <ChevronRight />
           </div>
