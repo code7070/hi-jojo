@@ -19,11 +19,9 @@ const WorkPart = ({ work, open, setOpen }) => {
         </div>
       </button>
       <div className={classer(styles.content)}>
-        <div className="text-primary-content line-clamp-3">
-          {work.description}
-        </div>
-        <div className="absolute right-0 bottom-0 flex justify-end p-6">
-          <button className="btn-secondary btn [&>svg]:h-4 [&>svg]:w-4">
+        <div className="line-clamp-2">{work.description}</div>
+        <div className={styles.cta}>
+          <button>
             <span className="mr-2 font-bold">Detail</span>
             <ChevronRight />
           </button>

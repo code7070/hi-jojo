@@ -66,7 +66,7 @@
     @apply btn-ghost;
 
     &.open {
-      @apply btn-primary bg-primary-focus;
+      @apply btn-secondary bg-secondary-focus;
     }
   }
 
@@ -84,7 +84,15 @@
     @apply h-0;
 
     &.open {
-      @apply h-56 bg-primary;
+      @apply h-56 bg-secondary;
+    }
+  }
+
+  .cta {
+    @apply absolute right-0 bottom-0 flex justify-end p-6;
+
+    button {
+      @apply btn-primary btn [&>svg]:h-4 [&>svg]:w-4;
     }
   }
 }
