@@ -1,43 +1,29 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useState } from "react";
 import workList from "@utils/worklist";
 import ChevronRight from "@icons/chevron-right";
+import styles from "@styles/work.module.scss";
 
 const WorkPart = ({ work, open, setOpen }) => {
   const toggle = () => setOpen(open === work.link ? false : work.link);
 
   const isOpen = open === work.link;
 
+  const classer = (elClass) => `${elClass} ${isOpen ? styles.open : ""}`;
+
   return (
-    <div
-      className={`bg-white translate-all duration-200 overflow-hidden ${
-        isOpen ? "h-72" : "h-16"
-      }`}
-    >
-      <button
-        className={`flex btn btn-lg rounded-none w-full text-left m-0 outline-none normal-case ${
-          isOpen ? "btn-primary bg-primary-focus" : "btn-ghost"
-        }`}
-        onClick={toggle}
-      >
+    <div className={classer(styles.workPart)}>
+      <button className={classer(styles.btnHead)} onClick={toggle}>
         <div className="flex-1">{work.name}</div>
-        <div
-          className={`[&>svg]:w-4 [&>svg]:h-4 transition-all ${
-            isOpen ? "rotate-90" : "rotate-0"
-          }`}
-        >
+        <div className={classer(styles.arrowHead)}>
           <ChevronRight />
         </div>
       </button>
-      <div
-        className={`relative transition-all px-6 py-4 overflow-hidden ${
-          isOpen ? "h-56 bg-primary" : "h-0"
-        }`}
-      >
-        <div className="line-clamp-3 text-primary-content">
+      <div className={classer(styles.content)}>
+        <div className="text-primary-content line-clamp-3">
           {work.description}
         </div>
-        <div className="flex justify-end absolute right-0 bottom-0 p-6">
-          <button className="btn btn-secondary [&>svg]:w-4 [&>svg]:h-4">
+        <div className="absolute right-0 bottom-0 flex justify-end p-6">
+          <button className="btn-secondary btn [&>svg]:h-4 [&>svg]:w-4">
             <span className="mr-2 font-bold">Detail</span>
             <ChevronRight />
           </button>
@@ -52,11 +38,11 @@ const WorkSection = ({ w }) => {
 
   return (
     <Fragment key={w.year}>
-      <div className="text-8xl font-extrabold text-primary opacity-30 translate-x-[-25%] translate-y-[15%]">
+      <div className="translate-x-[-25%] translate-y-[15%] text-8xl font-extrabold text-primary opacity-30">
         {w.year}
       </div>
 
-      <div className="relative mb-20 rounded-2xl overflow-hidden">
+      <div className="relative mb-20 overflow-hidden rounded-2xl">
         {w.works.map((x) => (
           <WorkPart key={x.link} work={x} open={open} setOpen={setOpen} />
         ))}
@@ -67,7 +53,7 @@ const WorkSection = ({ w }) => {
 
 export default function WorklistMobile() {
   return (
-    <div className="block relative sm:hidden max-w-md px-4 mx-auto overflow-x-hidden">
+    <div className="relative mx-auto block max-w-md overflow-x-hidden px-4 sm:hidden">
       {workList.map((w) => (
         <WorkSection key={w.year} w={w} />
       ))}
