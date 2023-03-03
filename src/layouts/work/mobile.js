@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGamepad, faWindowMaximize } from "@fortawesome/free-solid-svg-icons";
+import { faCode, faGamepad } from "@fortawesome/free-solid-svg-icons";
 import { Fragment, useState } from "react";
 import workList from "@utils/worklist";
 import ChevronRight from "@icons/chevron-right";
@@ -19,7 +19,7 @@ const WorkPart = ({ work, open, setOpen }) => {
         <div className="flex items-center">
           <div className="btn btn-primary btn-circle btn-sm mr-4">
             <FontAwesomeIcon
-              icon={work.type === "Technical" ? faGamepad : faWindowMaximize}
+              icon={work.type === "Technical" ? faGamepad : faCode}
               size="lg"
             />
           </div>
