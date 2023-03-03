@@ -14,8 +14,10 @@ const WorkPart = ({ work, open, setOpen }) => {
     <div className={classer(styles.workPart)}>
       <button className={classer(styles.btnHead)} onClick={toggle}>
         <div className="flex-1">{work.name}</div>
-        <div className={classer(styles.arrowHead)}>
-          <ChevronRight />
+        <div>
+          <div className={classer(styles.arrowHead)}>
+            <ChevronRight />
+          </div>
         </div>
       </button>
       <div className={classer(styles.content)}>

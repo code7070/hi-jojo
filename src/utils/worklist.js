@@ -10,6 +10,7 @@ const workList = [
         description:
           "Kolaborasi pertama antara Underline dan salah satu penyedia jasa makeup dan busana pernikahan.",
         colors: "#BF7E1B,#0f0f0f,#a5a5a5",
+        type: "Web",
       },
       {
         name: "Cari Manis",
@@ -19,6 +20,7 @@ const workList = [
         description:
           "Produk portofolio pertama dari Underline, yang diharapkan dapat membantu para pengguna yang ingin mengetahui kadar gula pada produk minuman",
         colors: "#057aff,#cce4ff,#ffd646",
+        type: "Web",
       },
       {
         name: "/hi-jojo",
@@ -28,6 +30,7 @@ const workList = [
         description:
           "Profile page saya pribadi yang dibangun secara dadakan, tanpa designer.",
         colors: "#053f33,#fbbd23,#add4be,#cce4d0",
+        type: "Web",
       },
     ],
   },
@@ -42,6 +45,7 @@ const workList = [
         description:
           "Platform untuk melakukan transaksi perawatan hingga pakan hewan peliharaan. Project ini berjalan secara internal dan sedang menunggu pendanaan untuk tahap berikutnya ;)",
         colors: "#ffbe18,#3dabff,#333333",
+        type: "Web",
       },
       {
         name: "Meat Supplier Landing Page",
@@ -51,6 +55,7 @@ const workList = [
         description:
           "Landing page untuk penyedia daging sapi premium yang menginginkan untuk menyatukan mini-galeri produk di dalam company profile mereka.",
         colors: "#ee1d23,#859d8f,#edd398",
+        type: "Web",
       },
     ],
   },
@@ -66,6 +71,7 @@ const workList = [
         description:
           "Project internal - sebuah web-app eCommerce yang menjual produk perusahaan dan rekanan.",
         colors: "#2bbecb,#dbf9fc,#eb008b,#fde6f3",
+        type: "Web",
       },
     ],
   },
@@ -79,6 +85,7 @@ const workList = [
         stacks: "ReactJS,PUG,Invision,Avocode",
         isPrivate: true,
         colors: "#ea072b,#dbdcdf,#000000",
+        type: "Web",
       },
     ],
   },
@@ -86,12 +93,31 @@ const workList = [
     year: "2019",
     works: [
       {
+        name: "ReactJS ❤️ SEO",
+        year: 2020,
+        link: "reactjs-love-seo",
+        stacks: "ReactJS,Screaming Frog,Puppeteer",
+        isPrivate: true,
+        colors: "#01d8a2,#4dddf6,#72b62b",
+        type: "Technical",
+      },
+      {
+        name: "Web Perf. Consideration",
+        year: 2020,
+        link: "web-performance",
+        stacks: "JavaScript",
+        isPrivate: true,
+        colors: "#f0db4f,#323330",
+        type: "Technical",
+      },
+      {
         name: "Promotional S",
         year: 2019,
         link: "event-a",
         stacks: "ReactJS,Sass,Zeplin,Avocode",
         isPrivate: true,
         colors: "#8de1fd,#e32018,#ffe722,#a2d41c",
+        type: "Web",
       },
       {
         name: "Submission 2019-1",
@@ -100,6 +126,7 @@ const workList = [
         stacks: "ReactJS,Zeplin,Invision,CSS module",
         isPrivate: true,
         colors: "#ea1521,#eba526,#3765bb",
+        type: "Web",
       },
     ],
   },
