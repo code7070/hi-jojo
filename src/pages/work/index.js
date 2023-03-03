@@ -1,7 +1,7 @@
 import HeadlinePage from "@components/HeadlinePage";
 import PageHead from "@pages/PageHead";
-import WorkListDekstop from "./desktop";
-import WorklistMobile from "./mobile";
+import WorkListDekstop from "@layouts/work/desktop";
+import WorklistMobile from "@layouts/work/mobile";
 
 export default function WorkPage() {
   return (

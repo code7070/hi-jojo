@@ -1,18 +1,7 @@
 import styles from "@styles/work.module.scss";
 import workList from "@utils/worklist";
 
-const chunkingArr = (array = [], size = 2) => {
-  const res = [];
-  for (let i = 0; i < array.length; i += size) {
-    const chunk = array.slice(i, i + size);
-    res.push(chunk);
-  }
-  return res;
-};
-
 const WorkGrid = ({ works = [] }) => {
-  const workloop = chunkingArr(works);
-
   return (
     <div className={styles.workOuterWrapper}>
       {works.map((item, itemIndex) => (
