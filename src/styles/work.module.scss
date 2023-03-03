@@ -11,7 +11,9 @@
 }
 
 .workOuterWrapper {
-  @apply relative w-full flex flex-col gap-3 mx-2 sm:mx-0;
+  // @apply relative w-full flex flex-col gap-3 mx-2 sm:mx-0;
+  @apply relative mx-2 sm:mx-0;
+  @apply grid grid-cols-2 gap-10 w-full;
 }
 
 .workInnerWrapper {
@@ -19,8 +21,8 @@
 }
 
 .workBox {
-  @apply relative bg-accent rounded-xl p-4 transition-all duration-200 overflow-hidden;
-  @apply w-3/4 mb-6 sm:mb-0 mx-auto sm:w-1/2 sm:mx-0;
+  @apply relative bg-accent rounded-2xl transition-all duration-200 overflow-hidden;
+  @apply w-full;
   @apply hover:ring-4 hover:ring-primary;
   /* @apply -mt-40 first:mt-0; */
 
@@ -29,64 +31,20 @@
   }
 
   .info {
-    @apply rounded-xl bg-secondary transition-all duration-200 p-4 h-[40%];
-    @apply absolute left-[50%] top-0 w-full translate-x-[-50%] rounded-b-none;
-    @apply sm:bottom-0 sm:top-auto sm:w-full sm:rounded-t-none rounded-b-xl;
+    @apply rounded-2xl rounded-t-none bg-secondary p-6;
 
     .name {
-      @apply font-bold text-lg sm:text-2xl;
+      @apply font-bold text-xl flex-1 line-clamp-1;
     }
 
     .desc {
-      @apply hidden text-sm mt-1;
+      @apply text-sm font-medium mt-1 line-clamp-2;
     }
 
     .cta {
-      @apply btn btn-primary btn-sm w-full mt-4;
+      @apply btn btn-primary;
     }
   }
 }
 
 /* ODD SECTION */
-
-.infoInRight {
-  @apply sm:right-0 sm:top-[50%] sm:translate-y-[-50%] sm:translate-x-0 sm:left-auto sm:w-[40%] sm:h-full;
-  @apply sm:rounded-l-none;
-
-  .desc {
-    @apply block sm:line-clamp-3;
-  }
-}
-
-.workSection:nth-child(odd) {
-  .workInnerWrapper:nth-child(odd) .workBox:nth-child(odd),
-  .workInnerWrapper:nth-child(even) .workBox:nth-child(even) {
-    @apply sm:w-2/3;
-
-    .info {
-      @extend .infoInRight;
-    }
-  }
-
-  .workInnerWrapper:nth-child(odd) .workBox:nth-child(even),
-  .workInnerWrapper:nth-child(even) .workBox:nth-child(odd) {
-    @apply sm:w-1/3;
-  }
-}
-
-/* EVEN SECTION */
-.workSection:nth-child(even) {
-  .workInnerWrapper:nth-child(odd) .workBox:nth-child(odd),
-  .workInnerWrapper:nth-child(even) .workBox:nth-child(even) {
-    @apply sm:w-1/3;
-  }
-
-  .workInnerWrapper:nth-child(odd) .workBox:nth-child(even),
-  .workInnerWrapper:nth-child(even) .workBox:nth-child(odd) {
-    @apply sm:w-2/3;
-
-    .info {
-      @extend .infoInRight;
-    }
-  }
-}

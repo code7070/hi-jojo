@@ -15,18 +15,18 @@ const WorkGrid = ({ works = [] }) => {
 
   return (
     <div className={styles.workOuterWrapper}>
-      {workloop.map((loop, loopIndex) => (
-        <div className={styles.workInnerWrapper} key={loopIndex}>
-          {loop.map((item, itemIndex) => (
-            <div key={itemIndex} className={styles.workBox}>
-              <div className={styles.media} />
-              <div className={styles.info}>
+      {works.map((item, itemIndex) => (
+        <div key={itemIndex} className={styles.workBox}>
+          <div className={styles.media} />
+          <div className={styles.info}>
+            <div className="flex items-start justify-between">
+              <div className="mr-2">
                 <div className={styles.name}>{item.name}</div>
                 <div className={styles.desc}>{item.description}</div>
-                <button className={styles.cta}>Detail</button>
               </div>
+              <button className={styles.cta}>Detail</button>
             </div>
-          ))}
+          </div>
         </div>
       ))}
     </div>
