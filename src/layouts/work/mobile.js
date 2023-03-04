@@ -5,7 +5,11 @@ import workList from "@utils/worklist";
 import ChevronRight from "@icons/chevron-right";
 import styles from "@styles/work.module.scss";
 
-const WorkPart = ({ work, open, setOpen }) => {
+const WorkPart = ({ work, open, setOpen, filter }) => {
+  if (filter.name === "web" && work.type !== "web") return "";
+  else if (filter.name === "playground" && work.type !== "playground")
+    return "";
+
   const toggle = () => setOpen(open === work.link ? false : work.link);
 
   const isOpen = open === work.link;
@@ -19,7 +23,7 @@ const WorkPart = ({ work, open, setOpen }) => {
         <div className="flex items-center">
           <div className="btn btn-primary btn-circle btn-sm mr-4">
             <FontAwesomeIcon
-              icon={work.type === "Technical" ? faGamepad : faCode}
+              icon={work.type === "playground" ? faGamepad : faCode}
               size="lg"
             />
           </div>
@@ -41,7 +45,7 @@ const WorkPart = ({ work, open, setOpen }) => {
   );
 };
 
-const WorkSection = ({ w }) => {
+const WorkSection = ({ w, filter }) => {
   const [open, setOpen] = useState(w.works[0].link);
 
   return (
@@ -52,18 +56,31 @@ const WorkSection = ({ w }) => {
 
       <div className="relative mb-20 overflow-hidden rounded-2xl">
         {w.works.map((x) => (
-          <WorkPart key={x.link} work={x} open={open} setOpen={setOpen} />
+          <WorkPart
+            filter={filter}
+            key={x.link}
+            work={x}
+            open={open}
+            setOpen={setOpen}
+          />
         ))}
       </div>
     </Fragment>
   );
 };
 
-export default function WorklistMobile() {
+export default function WorklistMobile({ filter }) {
+  let loops = [...workList];
+  if (filter.name !== "all")
+    loops = [
+      ...workList.filter((work) =>
+        work.works.some((item) => item.type === filter.name)
+      ),
+    ];
   return (
     <div className="relative mx-auto block max-w-md overflow-x-hidden px-4 sm:hidden">
-      {workList.map((w) => (
-        <WorkSection key={w.year} w={w} />
+      {loops.map((w) => (
+        <WorkSection filter={filter} key={w.year} w={w} />
       ))}
     </div>
   );

@@ -11,7 +11,7 @@ const WorkGrid = ({ works = [] }) => (
           <div className="btn btn-circle btn-sm absolute right-4 top-4">
             <FontAwesomeIcon
               size="lg"
-              icon={item.type === "Technical" ? faGamepad : faCode}
+              icon={item.type === "playground" ? faGamepad : faCode}
             />
           </div>
         </div>

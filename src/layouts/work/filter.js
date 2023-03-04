@@ -6,16 +6,16 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const filterList = [
-  { name: "All", icon: faBarsStaggered },
-  { name: "Web", icon: faCode },
-  { name: "Playground", icon: faGamepad },
+export const list = [
+  { name: "all", icon: faBarsStaggered },
+  { name: "web", icon: faCode },
+  { name: "playground", icon: faGamepad },
 ];
 
 const Desktop = ({ filter, setFilter }) => {
   return (
     <div className="hidden sm:flex btn-group w-full">
-      {filterList.map((i) => (
+      {list.map((i) => (
         <button
           key={i.name}
           type="button"
@@ -67,11 +67,11 @@ const Mobile = ({ filter, setFilter }) => {
           {filter.name}
         </button>
         <ul className="left-[50%] translate-x-[-50%] block dropdown-content menu p-2 shadow bg-white rounded-box w-52">
-          {filterList.map((i) => (
+          {list.map((i) => (
             <li key={i.name}>
               <button
                 type="button"
-                className="flex"
+                className="flex capitalize"
                 onClick={(e) => {
                   setFilter(i);
                   closeDrop();
@@ -87,9 +87,7 @@ const Mobile = ({ filter, setFilter }) => {
   );
 };
 
-export default function WorkFilter() {
-  const [filter, setFilter] = useState(filterList[0]);
-
+export default function WorkFilter({ filter, setFilter }) {
   return (
     <div className="my-10 max-w-xs mx-auto">
       <Desktop filter={filter} setFilter={setFilter} />
