@@ -21,9 +21,15 @@ export default function Header() {
     return classes;
   };
 
+  const inWorkDetail = path === "/works/[slug]";
+
   return (
-    <header className="fixed left-0 top-0 right-0 bg-base-100 max-h-[68px] z-50">
-      <div className="content-wrapper py-4 ">
+    <header
+      className={`fixed left-0 top-0 right-0 bg-base-100 max-h-[68px] z-50 transition-all duration-200 ${
+        inWorkDetail ? "translate-y-[-100%]" : ""
+      }`}
+    >
+      <div className="content-wrapper py-4">
         <div className="container flex items-center justify-start h-9 gap-4">
           <Link href="/">
             <div

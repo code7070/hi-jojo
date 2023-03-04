@@ -24,9 +24,11 @@ export default function WorkDetail({ params, work }) {
     <>
       <PageHead title={`Works - ${work.name}`} />
       <div className="container">
-        <div>Work Detail</div>
-        <div>{JSON.stringify(params)}</div>
-        <div>{JSON.stringify(work)}</div>
+        <div className="max-w-3xl mx-auto">
+          <div>Work Detail</div>
+          <div>{JSON.stringify(params)}</div>
+          <div>{JSON.stringify(work)}</div>
+        </div>
       </div>
     </>
   );
