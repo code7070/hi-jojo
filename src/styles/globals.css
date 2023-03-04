@@ -14,10 +14,6 @@ body {
   /* overflow-x: hidden; */
 }
 
-body {
-  padding-top: 70px;
-}
-
 .container {
   @apply relative max-w-7xl mx-auto;
 }

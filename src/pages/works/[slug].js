@@ -2,6 +2,42 @@ import { faCode, faGamepad } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PageHead from "@pages/PageHead";
 import workList from "@utils/worklist";
+import Image from "next/image";
+
+const Iconize = ({ type }) => (
+  <div className="fixed right-10 top-[50%] translate-x-[50%] sm:translate-x-0 translate-y-[-150%] sm:translate-y-[-50%] opacity-5 -rotate-12">
+    <FontAwesomeIcon
+      size="7x"
+      icon={type === "playground" ? faGamepad : faCode}
+    />
+  </div>
+);
+
+const Head = ({ name }) => (
+  <h2 className="font-bold text-5xl md:text-7xl mb-14">{name}</h2>
+);
+
+const Description = ({ colors = "", description = "", type }) => {
+  return (
+    <div className="mb-20">
+      <div className="mb-8 flex items-center gap-4 flex-wrap">
+        <div className="badge badge-primary uppercase font-bold p-4">
+          {type}
+        </div>
+        {colors.split(",").map((i) => (
+          <div
+            key={i}
+            className="rounded-lg w-8 h-8 shadow-lg"
+            style={{ backgroundColor: i }}
+          />
+        ))}
+      </div>
+      <div className="text-lg md:text-xl font-medium leading-6">
+        {description}
+      </div>
+    </div>
+  );
+};
 
 export function getStaticPaths() {
   let paths = [];
@@ -25,29 +61,28 @@ export default function WorkDetail({ params, work }) {
   return (
     <>
       <PageHead title={`Works - ${work.name}`} />
-      <div className="mt-[-68px] relative bg-secondary">
-        <div className="relative max-w-2xl mx-auto px-8 py-20">
-          <div className="absolute right-0 top-10 opacity-10 -rotate-12">
-            <FontAwesomeIcon
-              size="7x"
-              icon={work.type === "playground" ? faGamepad : faCode}
-            />
-          </div>
-          <h2 className="text-3xl lg:text-4xl font-bold mb-16">{work.name}</h2>
-          <div className="flex items-center gap-4 mb-4">
-            {work.colors.split(",").map((i) => (
-              <div
-                className="w-8 h-8 rounded-xl tooltip"
-                data-tip={i}
-                style={{ backgroundColor: `${i}` }}
+      <section className="relative">
+        <div className="sticky top-0">
+          <div className="relative h-52 md:h-96 overflow-hidden bg-primary">
+            {work.cover && (
+              <Image
+                alt={work.name}
+                src={work.cover}
+                className="block"
+                fill
+                style={{ objectFit: "cover" }}
               />
-            ))}
-          </div>
-          <div className="text-lg lg:text-xl font-medium">
-            {work.description}
+            )}
           </div>
         </div>
-      </div>
+        <div className="relative bg-base-100 min-h-screen">
+          <div className="relative mx-auto max-w-3xl py-10 px-6">
+            <Iconize type={work.type} />
+            <Head name={work.name} />
+            <Description {...work} />
+          </div>
+        </div>
+      </section>
     </>
   );
 }

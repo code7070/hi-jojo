@@ -1,4 +1,4 @@
-import Router from "next/router";
+import Router, { useRouter } from "next/router";
 import nProgress from "nprogress";
 import { Plus_Jakarta_Sans as Font } from "@next/font/google";
 import Header from "@components/header";
@@ -18,9 +18,14 @@ Router.events.on("routeChangeComplete", () => nProgress.done());
 Router.events.on("routeChangeError", () => nProgress.done());
 
 export default function App({ Component, pageProps }) {
+  const { pathname } = useRouter();
+  const inWorkDetail = pathname === "/works/[slug]";
+  const spacer = inWorkDetail ? "pt-[0px]" : "pt-[70px]";
   return (
     <>
-      <main className={font.className}>
+      <main
+        className={`${font.className} transition-all duration-200 ${spacer}`}
+      >
         <div className="top-ornament" />
         <Component {...pageProps} />
       </main>

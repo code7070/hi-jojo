@@ -8,9 +8,10 @@ const workList = [
         link: "akarna-wedding",
         stacks: "NextJS,Notion,TailwindCSS,Vercel",
         description:
-          "Kolaborasi pertama antara Underline dan salah satu penyedia jasa makeup dan busana pernikahan.",
+          "Kolaborasi pertama antara Underline dengan salah satu penyedia jasa makeup dan busana pernikahan.",
         colors: "#BF7E1B,#0f0f0f,#a5a5a5",
         type: "web",
+        cover: "/works/akarna/cover-akarna.jpg",
       },
       {
         name: "Cari Manis",
