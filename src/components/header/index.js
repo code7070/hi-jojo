@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 const pages = [
-  { name: "works", href: "/work" },
+  { name: "works", href: "/works" },
   { name: "articles", href: "/articles" },
 ];
 
@@ -16,7 +16,7 @@ export default function Header() {
 
   const pageLinks = (href) => {
     let classes = `${linkClass} py-2 px-4 border-2 border-transparent hover:bg-secondary`;
-    if (href === asPath)
+    if (href === asPath || asPath.includes(href))
       classes = `${classes} bg-primary text-white hover:bg-primary`;
     return classes;
   };

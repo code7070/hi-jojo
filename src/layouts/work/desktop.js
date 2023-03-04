@@ -2,6 +2,7 @@ import { faCode, faGamepad } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "@styles/work.module.scss";
 import workList from "@utils/worklist";
+import Link from "next/link";
 
 const Worklet = ({ work, filter }) => {
   if (filter.name !== "all" && work.type !== filter.name) return "";
@@ -21,7 +22,9 @@ const Worklet = ({ work, filter }) => {
           <div className="mr-2 flex-1">
             <div className={styles.name}>{work.name}</div>
             <div className={styles.desc}>{work.description}</div>
-            <button className={styles.cta}>Detail</button>
+            <Link className={styles.cta} href={`/works/${work.link}`}>
+              Detail
+            </Link>
           </div>
         </div>
       </div>
