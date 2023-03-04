@@ -1,3 +1,5 @@
+import { faCode, faGamepad } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PageHead from "@pages/PageHead";
 import workList from "@utils/worklist";
 
@@ -23,11 +25,27 @@ export default function WorkDetail({ params, work }) {
   return (
     <>
       <PageHead title={`Works - ${work.name}`} />
-      <div className="container">
-        <div className="max-w-3xl mx-auto">
-          <div>Work Detail</div>
-          <div>{JSON.stringify(params)}</div>
-          <div>{JSON.stringify(work)}</div>
+      <div className="mt-[-68px] relative bg-secondary">
+        <div className="relative max-w-2xl mx-auto px-8 py-20">
+          <div className="absolute right-0 top-10 opacity-10 -rotate-12">
+            <FontAwesomeIcon
+              size="7x"
+              icon={work.type === "playground" ? faGamepad : faCode}
+            />
+          </div>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-16">{work.name}</h2>
+          <div className="flex items-center gap-4 mb-4">
+            {work.colors.split(",").map((i) => (
+              <div
+                className="w-8 h-8 rounded-xl tooltip"
+                data-tip={i}
+                style={{ backgroundColor: `${i}` }}
+              />
+            ))}
+          </div>
+          <div className="text-lg lg:text-xl font-medium">
+            {work.description}
+          </div>
         </div>
       </div>
     </>
