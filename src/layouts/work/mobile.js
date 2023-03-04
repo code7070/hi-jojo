@@ -4,6 +4,7 @@ import { Fragment, useState } from "react";
 import workList from "@utils/worklist";
 import ChevronRight from "@icons/chevron-right";
 import styles from "@styles/work.module.scss";
+import Link from "next/link";
 
 const WorkPart = ({ work, open, setOpen, filter }) => {
   if (filter.name !== "all" && work.type !== filter.name) return "";
@@ -33,10 +34,10 @@ const WorkPart = ({ work, open, setOpen, filter }) => {
       <div className={classer(styles.content)}>
         <div className="line-clamp-2">{work.description}</div>
         <div className={styles.cta}>
-          <button>
+          <Link href={`/works/${work.link}`}>
             <span className="mr-2 font-bold">Detail</span>
             <ChevronRight />
-          </button>
+          </Link>
         </div>
       </div>
     </div>

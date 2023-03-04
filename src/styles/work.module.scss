@@ -91,7 +91,7 @@
   .cta {
     @apply absolute right-0 bottom-0 flex justify-end p-6;
 
-    button {
+    a {
       @apply btn-primary btn [&>svg]:h-4 [&>svg]:w-4;
     }
   }
