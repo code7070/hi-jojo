@@ -6,9 +6,7 @@ import ChevronRight from "@icons/chevron-right";
 import styles from "@styles/work.module.scss";
 
 const WorkPart = ({ work, open, setOpen, filter }) => {
-  if (filter.name === "web" && work.type !== "web") return "";
-  else if (filter.name === "playground" && work.type !== "playground")
-    return "";
+  if (filter.name !== "all" && work.type !== filter.name) return "";
 
   const toggle = () => setOpen(open === work.link ? false : work.link);
 

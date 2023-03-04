@@ -89,7 +89,7 @@ const Mobile = ({ filter, setFilter }) => {
 
 export default function WorkFilter({ filter, setFilter }) {
   return (
-    <div className="my-10 max-w-xs mx-auto">
+    <div className="my-10 sm:my-24 max-w-xs mx-auto">
       <Desktop filter={filter} setFilter={setFilter} />
       <Mobile filter={filter} setFilter={setFilter} />
     </div>
