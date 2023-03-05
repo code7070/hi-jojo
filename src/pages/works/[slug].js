@@ -14,13 +14,13 @@ const Iconize = ({ type }) => (
 );
 
 const Head = ({ name }) => (
-  <h2 className="font-bold text-5xl md:text-7xl mb-14">{name}</h2>
+  <h2 className="font-bold text-5xl md:text-7xl mb-6 md:mb-8">{name}</h2>
 );
 
 const Description = ({ colors = "", description = "", type }) => {
   return (
     <div className="mb-20">
-      <div className="mb-8 flex items-center gap-4 flex-wrap">
+      <div className="mb-6 md:mb-8 flex items-center gap-4 flex-wrap">
         <div className="badge badge-primary uppercase font-bold p-4">
           {type}
         </div>
