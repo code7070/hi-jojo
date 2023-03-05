@@ -1,4 +1,4 @@
-import style from "@styles/home.module.css";
+import style from "@styles/home.module.scss";
 
 export default function CardStories() {
   return (

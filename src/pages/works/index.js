@@ -7,6 +7,7 @@ import { useState } from "react";
 
 export default function WorkPage() {
   const [filter, setFilter] = useState(list[0]);
+
   return (
     <>
       <PageHead title="Works" />

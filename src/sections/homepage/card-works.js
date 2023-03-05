@@ -1,4 +1,4 @@
-import style from "@styles/home.module.css";
+import style from "@styles/home.module.scss";
 import workList from "@utils/worklist";
 import Link from "next/link";
 import { useRouter } from "next/router";

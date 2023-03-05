@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import style from "@styles/home.module.css";
+import style from "@styles/home.module.scss";
 import { useState } from "react";
 import ReactIcon from "@icons/react-icon";
 import TailwindIcon from "@icons/tailwind-icon";

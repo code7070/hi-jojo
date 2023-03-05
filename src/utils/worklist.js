@@ -5,7 +5,7 @@ const workList = [
       {
         name: "Akarna",
         year: 2023,
-        link: "akarna-wedding",
+        link: "akarna-wedding-web",
         stacks: "NextJS,Notion,TailwindCSS,Vercel",
         description:
           "Kolaborasi pertama antara Underline dengan salah satu penyedia jasa makeup dan busana pernikahan.",

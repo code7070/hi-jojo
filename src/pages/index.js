@@ -1,5 +1,5 @@
 import PageHead from "./PageHead";
-import styles from "@styles/home.module.css";
+import styles from "@styles/home.module.scss";
 import HomeRight from "src/sections/homepage/home-right";
 
 export default function Home() {

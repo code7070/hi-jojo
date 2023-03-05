@@ -41,12 +41,11 @@
 .underline1,
 .underline2 {
   @apply relative inline-block;
-}
 
-.underline1::after,
-.underline2::after {
-  @apply absolute left-0 bottom-2 h-5 w-0 bg-warning -z-[1];
-  content: "";
+  &::after {
+    @apply absolute left-0 bottom-2 h-5 w-0 bg-warning -z-[1];
+    content: "";
+  }
 }
 
 .underline1::after {
@@ -68,22 +67,22 @@
 .homeCard {
   @apply relative mb-3 rounded-2xl overflow-hidden mx-auto;
   @apply w-[95%] sm:w-[90%] xl:w-[312px];
-}
 
-.homeCard.left {
-  @apply mx-auto md:mr-2 xl:mx-auto;
-}
+  &.left {
+    @apply mx-auto md:mr-2 xl:mx-auto;
+  }
 
-.homeCard.right {
-  @apply mx-auto md:ml-2 xl:mx-auto;
+  &.right {
+    @apply mx-auto md:ml-2 xl:mx-auto;
+  }
 }
 
 .projectItem {
   @apply relative py-4 px-6 font-semibold transition-all duration-200 hover:text-white hover:bg-primary;
-}
 
-.projectItem .borders {
-  @apply h-px bg-primary w-[100%] absolute left-[50%] bottom-0 -translate-x-[50%] opacity-20;
+  .borders {
+    @apply h-px bg-primary w-[100%] absolute left-[50%] bottom-0 -translate-x-[50%] opacity-20;
+  }
 }
 
 .projectLink:last-child .projectItem .borders {
@@ -91,34 +90,38 @@
 }
 
 .homeCard.profile {
-  @apply bg-primary h-[460px] xl:-mt-10;
+  @apply bg-primary h-full;
 }
 
-.homeCard.profile .profileInner {
-  @apply relative w-full h-full transition-all duration-500;
+.profileSection {
+  @apply relative w-full transition-all duration-300 h-[460px] xl:-mt-10 mb-3;
   transform-style: preserve-3d;
-}
 
-.homeCard.profile .profileFront,
-.homeCard.profile .profileBack {
-  @apply absolute left-0 top-0 w-full h-full;
-  backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
+  .front,
+  .back {
+    @apply absolute left-0 top-0 w-full h-full;
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
 
-.homeCard.profile .profileBack {
-  transform: rotateY(180deg);
-}
+  .back {
+    transform: rotateY(180deg);
+  }
 
-.homeCard.profile .cta {
-  @apply btn btn-ghost btn-lg w-full font-black text-white rounded-none;
-}
+  .ctaWrapper {
+    @apply absolute left-0 bottom-0 w-full bg-black;
+  }
 
-.homeCard.profile.flip .profileInner {
-  transform: rotateY(180deg);
-}
+  .cta {
+    @apply btn btn-ghost btn-lg w-full font-black text-white rounded-none;
+  }
 
-.homeCard.profile.flip .cta {
-  @apply btn-error;
+  &.flip {
+    transform: rotateY(180deg);
+
+    .cta {
+      @apply btn-error;
+    }
+  }
 }

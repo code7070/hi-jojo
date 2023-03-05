@@ -1,4 +1,4 @@
-import style from "@styles/home.module.css";
+import style from "@styles/home.module.scss";
 import { doScroll } from "@utils/helpers";
 import { useState } from "react";
 import CardStories from "./card-stories";
