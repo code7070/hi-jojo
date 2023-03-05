@@ -40,11 +40,12 @@ const Frontside = ({ onClick, flip }) => (
 const Backside = ({ onClick, flip }) => (
   <div className={`${style.homeCard} bg-secondary h-full`}>
     <div className="relative p-8">
-      <div className="font-extrabold text-2xl mb-8">Jojo</div>
-      <ul className="mb-12 block [&>li]:block [&>li]:mb-2 [&>li]:ml-2 [&>li]:font-medium [&>li]:text-lg">
+      <div className="font-extrabold text-2xl mb-6">Jojo</div>
+      <ul className="mb-8 block [&>li]:block [&>li]:mb-2 [&>li]:ml-2 [&>li]:font-medium">
         <li>Frontend Developer</li>
         <li>4 years experience</li>
         <li>Familiarly with JS library & framework</li>
+        <li>Able to work as a team or as single fighter</li>
         <li>Wiling to work remotely</li>
       </ul>
       <button
