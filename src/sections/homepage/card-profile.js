@@ -4,16 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEnvelope,
   faFilePdf,
-  faLocation,
   faLocationArrow,
-  faMessage,
-  faPhone,
-  faPhoneAlt,
-  faPhoneFlip,
-  faPhoneSlash,
-  faPhoneSquare,
 } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 const ToggleView = ({ onClick, flip }) => (
   <div className={style.ctaWrapper}>
@@ -49,28 +42,37 @@ const Frontside = ({ onClick, flip }) => (
   </div>
 );
 
+const ContactRow = ({ icon, children }) => (
+  <div className="mb-6">
+    <div className="w-1/6">
+      <FontAwesomeIcon icon={icon} size="lg" />
+    </div>
+    <div className="flex-1 font-semibold">{children}</div>
+  </div>
+);
+
+const LinkOffer = ({ children, href }) => (
+  <a className="underline hover:no-underline" href={href} target="_blank">
+    {children}
+  </a>
+);
+
 const Backside = ({ onClick, flip }) => {
   const mail = "azizditya+contact@gmail.com";
+  const linkedLink = "https://www.linkedin.com/in/aditya-a-332510145/";
   return (
     <div className={`${style.homeCard} bg-secondary h-full`}>
       <div className="relative p-8">
         <div className="font-extrabold text-2xl mb-6">Jojo</div>
-        <div className="mb-6">
-          <div className="w-1/6">
-            <FontAwesomeIcon icon={faEnvelope} size="lg" />
-          </div>
-          <div className="flex-1 font-semibold">
-            <a href={`mailto:${mail}`} className="underline">
-              {mail}
-            </a>
-          </div>
-        </div>
-        <div className="mb-6">
-          <div className="w-1/6">
-            <FontAwesomeIcon icon={faLocationArrow} size="lg" />
-          </div>
+        <ContactRow icon={faEnvelope}>
+          <LinkOffer href={`mailto:${mail}`}>{mail}</LinkOffer>
+        </ContactRow>
+        <ContactRow icon={faLocationArrow}>
           <div className="flex-1 font-semibold">Bekasi, Indonesia</div>
-        </div>
+        </ContactRow>
+        <ContactRow icon={faLinkedin}>
+          <LinkOffer href={linkedLink}>LinkedIn</LinkOffer>
+        </ContactRow>
         <div className="my-8">
           <button
             type="button"
