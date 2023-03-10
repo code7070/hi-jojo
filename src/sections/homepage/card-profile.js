@@ -1,12 +1,24 @@
 import Image from "next/image";
 import style from "@styles/home.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEnvelope,
+  faFilePdf,
+  faLocation,
+  faLocationArrow,
+  faMessage,
+  faPhone,
+  faPhoneAlt,
+  faPhoneFlip,
+  faPhoneSlash,
+  faPhoneSquare,
+} from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 const ToggleView = ({ onClick, flip }) => (
   <div className={style.ctaWrapper}>
     <button className={style.cta} onClick={onClick}>
-      {flip ? "Contact Me" : "Close"}
+      {flip ? "Close" : "Contact Me"}
     </button>
   </div>
 );
@@ -37,28 +49,42 @@ const Frontside = ({ onClick, flip }) => (
   </div>
 );
 
-const Backside = ({ onClick, flip }) => (
-  <div className={`${style.homeCard} bg-secondary h-full`}>
-    <div className="relative p-8">
-      <div className="font-extrabold text-2xl mb-6">Jojo</div>
-      <ul className="mb-8 block [&>li]:block [&>li]:mb-2 [&>li]:ml-2 [&>li]:font-medium">
-        <li>Frontend Developer</li>
-        <li>4 years experience</li>
-        <li>Familiarly with JS library & framework</li>
-        <li>Able to work as a team or as single fighter</li>
-        <li>Wiling to work remotely</li>
-      </ul>
-      <button
-        type="button"
-        className="btn btn-primary btn-ghost flex-1 w-full gap-4 font-bold"
-      >
-        <FontAwesomeIcon icon={faFilePdf} size="xl" />
-        <div>See My CV</div>
-      </button>
+const Backside = ({ onClick, flip }) => {
+  const mail = "azizditya+contact@gmail.com";
+  return (
+    <div className={`${style.homeCard} bg-secondary h-full`}>
+      <div className="relative p-8">
+        <div className="font-extrabold text-2xl mb-6">Jojo</div>
+        <div className="mb-6">
+          <div className="w-1/6">
+            <FontAwesomeIcon icon={faEnvelope} size="lg" />
+          </div>
+          <div className="flex-1 font-semibold">
+            <a href={`mailto:${mail}`} className="underline">
+              {mail}
+            </a>
+          </div>
+        </div>
+        <div className="mb-6">
+          <div className="w-1/6">
+            <FontAwesomeIcon icon={faLocationArrow} size="lg" />
+          </div>
+          <div className="flex-1 font-semibold">Bekasi, Indonesia</div>
+        </div>
+        <div className="my-8">
+          <button
+            type="button"
+            className="btn btn-primary btn-outline btn-circle flex-1 w-full gap-4 font-bold"
+          >
+            <FontAwesomeIcon icon={faFilePdf} size="lg" />
+            <div>See My CV</div>
+          </button>
+        </div>
+      </div>
+      <ToggleView onClick={onClick} flip={flip} />
     </div>
-    <ToggleView onClick={onClick} flip={flip} />
-  </div>
-);
+  );
+};
 
 export default function CardProfile({ toggleFlip, flip }) {
   return (
