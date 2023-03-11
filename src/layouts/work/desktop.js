@@ -1,7 +1,7 @@
 import { faCode, faGamepad } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "@styles/work.module.scss";
-import workList from "@utils/worklist";
+// import workList from "@utils/worklist";
 import Link from "next/link";
 
 const Worklet = ({ work, filter }) => {
@@ -45,11 +45,11 @@ const WorkSection = ({ year, works = [], filter }) => (
   </section>
 );
 
-export default function WorkListDekstop({ filter }) {
-  let loops = [...workList];
+export default function WorkListDekstop({ filter, worklist = [] }) {
+  let loops = [...worklist];
   if (filter.name !== "all")
     loops = [
-      ...workList.filter((work) =>
+      ...worklist.filter((work) =>
         work.works.some((item) => item.type === filter.name)
       ),
     ];

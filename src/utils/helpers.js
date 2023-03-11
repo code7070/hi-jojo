@@ -36,3 +36,39 @@ export const chunkingArr = (array = [], size = 2) => {
 };
 
 export const notionConnection = new Client({ auth: process.env.notion_key });
+
+export const arrayGrouping = (array = [], key = "", group = "") => {
+  let grouped = [];
+
+  array.map((i) => {
+    const sameKey = grouped.find((g) => g[key] === i[key]);
+    const indexSame = sameKey ? grouped.findIndex((g) => g[key] === i[key]) : 0;
+
+    if (!sameKey) {
+      grouped.push({ [key]: i[key], [group]: [i] });
+    } else {
+      grouped[indexSame][group] = [...grouped[indexSame][group], i];
+    }
+  });
+  return grouped;
+};
+
+export const getNotion = {
+  dbValues: (propertiesField) => {
+    const properties = propertiesField;
+
+    if (!properties) return null;
+
+    const type = properties.type;
+    const target = properties[type];
+    let value = null;
+
+    if (type === "select") value = target.name;
+    else if (target) {
+      const hasLength = target.length > 0;
+      value = hasLength ? target[0].plain_text : null;
+    }
+
+    return value;
+  },
+};

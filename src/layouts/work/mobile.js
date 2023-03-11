@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode, faGamepad } from "@fortawesome/free-solid-svg-icons";
 import { Fragment, useState } from "react";
-import workList from "@utils/worklist";
+// import workList from "@utils/worklist";
 import ChevronRight from "@icons/chevron-right";
 import styles from "@styles/work.module.scss";
 import Link from "next/link";
@@ -68,11 +68,11 @@ const WorkSection = ({ w, filter }) => {
   );
 };
 
-export default function WorklistMobile({ filter }) {
-  let loops = [...workList];
+export default function WorklistMobile({ filter, worklist }) {
+  let loops = [...worklist];
   if (filter.name !== "all")
     loops = [
-      ...workList.filter((work) =>
+      ...worklist.filter((work) =>
         work.works.some((item) => item.type === filter.name)
       ),
     ];
