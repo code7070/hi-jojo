@@ -1,3 +1,5 @@
+import { Client } from "@notionhq/client";
+
 function easing(t) {
   return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
 }
@@ -32,3 +34,5 @@ export const chunkingArr = (array = [], size = 2) => {
   }
   return res;
 };
+
+export const notionConnection = new Client({ auth: process.env.notion_key });
