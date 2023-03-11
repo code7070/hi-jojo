@@ -28,7 +28,7 @@ const projectList = [
   workList[1].works[1],
 ];
 
-export default function CardProject({}) {
+export default function CardProject() {
   const router = useRouter();
   const toWorks = () => router.push("/works", "/works", { shallow: true });
   return (
@@ -42,7 +42,7 @@ export default function CardProject({}) {
         ))}
       </div>
       <button
-        className="btn-primary btn w-full rounded-none border-transparent bg-primary font-bold outline-none transition-all duration-100 hover:tracking-widest active:rounded-xl"
+        className="btn btn-primary w-full rounded-none border-transparent bg-primary font-bold outline-none transition-all duration-100 hover:tracking-widest active:rounded-xl"
         onClick={toWorks}
         type="button"
       >

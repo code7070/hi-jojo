@@ -66,7 +66,7 @@ const ResponseView = ({ variants, setVariants, toggleFlip }) => {
   return (
     <div className="mt-8 flex justify-center gap-3">
       <button
-        className="btn-secondary btn-square btn text-xl font-black"
+        className="btn btn-secondary btn-square text-xl font-black"
         type="button"
         onClick={reload}
         disabled={varInit}
@@ -87,7 +87,7 @@ const ResponseView = ({ variants, setVariants, toggleFlip }) => {
         transition={transition(chatList.length + 1, variants)}
       >
         <button
-          className="btn-primary btn w-full border-2 !font-bold tracking-wide"
+          className="btn btn-primary w-full border-2 !font-bold tracking-wide"
           type="button"
           onClick={toggleFlip}
         >

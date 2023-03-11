@@ -52,7 +52,12 @@ const ContactRow = ({ icon, children }) => (
 );
 
 const LinkOffer = ({ children, href }) => (
-  <a className="underline hover:no-underline" href={href} target="_blank">
+  <a
+    className="underline hover:no-underline"
+    href={href}
+    target="_blank"
+    rel="noreferrer"
+  >
     {children}
   </a>
 );
@@ -76,7 +81,7 @@ const Backside = ({ onClick, flip }) => {
         <div className="my-8">
           <button
             type="button"
-            className="btn-outline btn-primary btn-circle btn w-full flex-1 gap-4 font-bold"
+            className="btn-outline btn btn-primary btn-circle w-full flex-1 gap-4 font-bold"
           >
             <FontAwesomeIcon icon={faFilePdf} size="lg" />
             <div>See My CV</div>

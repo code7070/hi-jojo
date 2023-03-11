@@ -57,7 +57,7 @@ export function getStaticProps({ params }) {
   };
 }
 
-export default function WorkDetail({ params, work }) {
+export default function WorkDetail({ work }) {
   return (
     <>
       <PageHead title={`Works - ${work.name}`} />

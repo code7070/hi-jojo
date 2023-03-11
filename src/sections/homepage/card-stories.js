@@ -5,7 +5,7 @@ import style from "@styles/home.module.scss";
 export default function CardStories() {
   return (
     <div
-      className={`${style.homeCard} ${style.right} min-h-60 overflow-hidden bg-[#D6E5E3]`}
+      className={`${style.homeCard} ${style.right} min-h-[240px] overflow-hidden bg-[#D6E5E3]`}
     >
       <div className="p-6">
         <h3 className="mb-8 text-4xl font-extrabold text-primary">
@@ -17,7 +17,7 @@ export default function CardStories() {
           </p>
           <p>I jump too far to ReactJS from only HTML & CSS skills 😅</p>
         </div>
-        <button type="button" className="btn-primary btn ml-auto block">
+        <button type="button" className="btn btn-primary ml-auto block">
           See More
           <span className="ml-4">
             <FontAwesomeIcon icon={faChevronRight} />
