@@ -1,15 +1,12 @@
 import { faCode, faGamepad } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PageHead from "@pages/PageHead";
-import workList from "@utils/worklist";
+import { fetchWorkList } from "@utils/worklist";
 import Image from "next/image";
 
 const Iconize = ({ type }) => (
   <div className="fixed right-10 top-[50%] translate-x-[50%] translate-y-[-150%] -rotate-12 opacity-5 sm:translate-x-0 sm:translate-y-[-50%]">
-    <FontAwesomeIcon
-      size="7x"
-      icon={type === "playground" ? faGamepad : faCode}
-    />
+    <FontAwesomeIcon size="7x" icon={type === "playground" ? faGamepad : faCode} />
   </div>
 );
 
@@ -21,9 +18,7 @@ const Description = ({ colors = "", description = "", type }) => {
   return (
     <div className="mb-20">
       <div className="mb-6 flex flex-wrap items-center gap-4 md:mb-8">
-        <div className="badge-primary badge p-4 font-bold uppercase">
-          {type}
-        </div>
+        <div className="badge-primary badge p-4 font-bold uppercase">{type}</div>
         {colors.split(",").map((i) => (
           <div
             key={i}
@@ -32,26 +27,22 @@ const Description = ({ colors = "", description = "", type }) => {
           />
         ))}
       </div>
-      <div className="text-lg font-medium leading-6 md:text-xl">
-        {description}
-      </div>
+      <div className="text-lg font-medium leading-6 md:text-xl">{description}</div>
     </div>
   );
 };
 
-export function getStaticPaths() {
+export async function getStaticPaths() {
   let paths = [];
-  workList.map((w) =>
-    w.works.map((i) => paths.push({ params: { slug: i.link } }))
-  );
+  const worklist = await fetchWorkList();
+  worklist.map((w) => w.works.map((i) => paths.push({ params: { slug: i.link } })));
   return { paths, fallback: false };
 }
 
-export function getStaticProps({ params }) {
+export async function getStaticProps({ params }) {
   const work = [];
-  workList.map((w) =>
-    w.works.map((x) => (x.link === params.slug ? work.push(x) : null))
-  );
+  const worklist = await fetchWorkList();
+  worklist.map((w) => w.works.map((x) => (x.link === params.slug ? work.push(x) : null)));
   return {
     props: { params, work: work[0] },
   };

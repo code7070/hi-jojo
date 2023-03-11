@@ -1,8 +1,15 @@
 import PageHead from "./PageHead";
 import styles from "@styles/home.module.scss";
 import HomeRight from "src/sections/homepage/home-right";
+import { fetchFavWorks } from "@utils/worklist";
 
-export default function Home() {
+export async function getStaticProps() {
+  return {
+    props: { favowork: await fetchFavWorks() },
+  };
+}
+
+export default function Home({ favowork }) {
   return (
     <>
       <PageHead />
@@ -20,15 +27,13 @@ export default function Home() {
             </h2>
             <div className="mx-auto mt-4 max-w-md text-center text-base font-semibold transition-all xl:mx-0 xl:block xl:text-left xl:text-lg">
               A frontend developer who loves{" "}
-              <span className="word-underline animated">
-                &lt;CleanCode /&gt;
-              </span>
+              <span className="word-underline animated">&lt;CleanCode /&gt;</span>
               <br />
               and make &nbsp;
               <span className="word-underline animated">awe-some-thing</span>.
             </div>
           </div>
-          <HomeRight />
+          <HomeRight favowork={favowork} />
         </div>
       </div>
     </>

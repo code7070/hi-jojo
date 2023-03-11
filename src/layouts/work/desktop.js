@@ -1,7 +1,6 @@
 import { faCode, faGamepad } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "@styles/work.module.scss";
-// import workList from "@utils/worklist";
 import Link from "next/link";
 
 const Worklet = ({ work, filter }) => {
@@ -49,9 +48,7 @@ export default function WorkListDekstop({ filter, worklist = [] }) {
   let loops = [...worklist];
   if (filter.name !== "all")
     loops = [
-      ...worklist.filter((work) =>
-        work.works.some((item) => item.type === filter.name)
-      ),
+      ...worklist.filter((work) => work.works.some((item) => item.type === filter.name)),
     ];
   return (
     <div className="mx-auto hidden max-w-3xl sm:block">

@@ -1,3 +1,5 @@
+import { arrayGrouping, getNotion, notionConnection } from "./helpers";
+
 const workList = [
   {
     year: "2023",
@@ -155,14 +157,56 @@ const workList = [
   },
 ];
 
-const rawWorkList = [
-  ...workList[0].works,
-  ...workList[1].works,
-  ...workList[2].works,
-  ...workList[3].works,
-  ...workList[4].works,
-  ...workList[5].works,
-];
+export const fetchFavWorks = async () => {
+  const { results } = await notionConnection.databases.query({
+    database_id: "38f9913ed88b4cd7a4c88b3851d4ad03",
+    filter: {
+      property: "favo",
+      checkbox: {
+        equals: true,
+      },
+    },
+    sorts: [
+      { property: "year", direction: "descending" },
+      { property: "Name", direction: "ascending" },
+    ],
+  });
 
-export { rawWorkList };
+  const data = results?.map((i) => ({
+    name: getNotion.dbValues(i.properties.Name),
+    year: getNotion.dbValues(i.properties.year),
+    link: getNotion.dbValues(i.properties.link),
+    pageId: getNotion.dbValues(i.properties.page),
+    description: getNotion.dbValues(i.properties.description),
+    type: getNotion.dbValues(i.properties.type),
+    zraw: i,
+  }));
+
+  return data;
+};
+
+export const fetchWorkList = async () => {
+  const { results } = await notionConnection.databases.query({
+    database_id: "38f9913ed88b4cd7a4c88b3851d4ad03",
+    sorts: [
+      { property: "year", direction: "descending" },
+      { property: "order", direction: "ascending" },
+    ],
+  });
+
+  const data = results?.map((i) => ({
+    name: getNotion.dbValues(i.properties.Name),
+    year: getNotion.dbValues(i.properties.year),
+    link: getNotion.dbValues(i.properties.link),
+    pageId: getNotion.dbValues(i.properties.page),
+    description: getNotion.dbValues(i.properties.description),
+    type: getNotion.dbValues(i.properties.type),
+    zraw: i,
+  }));
+
+  const grouped = arrayGrouping(data, "year", "works");
+
+  return grouped;
+};
+
 export default workList;
