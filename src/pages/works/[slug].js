@@ -5,7 +5,7 @@ import workList from "@utils/worklist";
 import Image from "next/image";
 
 const Iconize = ({ type }) => (
-  <div className="fixed right-10 top-[50%] translate-x-[50%] sm:translate-x-0 translate-y-[-150%] sm:translate-y-[-50%] opacity-5 -rotate-12">
+  <div className="fixed right-10 top-[50%] translate-x-[50%] translate-y-[-150%] -rotate-12 opacity-5 sm:translate-x-0 sm:translate-y-[-50%]">
     <FontAwesomeIcon
       size="7x"
       icon={type === "playground" ? faGamepad : faCode}
@@ -14,25 +14,25 @@ const Iconize = ({ type }) => (
 );
 
 const Head = ({ name }) => (
-  <h2 className="font-bold text-5xl md:text-7xl mb-6 md:mb-8">{name}</h2>
+  <h2 className="mb-6 text-5xl font-bold md:mb-8 md:text-7xl">{name}</h2>
 );
 
 const Description = ({ colors = "", description = "", type }) => {
   return (
     <div className="mb-20">
-      <div className="mb-6 md:mb-8 flex items-center gap-4 flex-wrap">
-        <div className="badge badge-primary uppercase font-bold p-4">
+      <div className="mb-6 flex flex-wrap items-center gap-4 md:mb-8">
+        <div className="badge-primary badge p-4 font-bold uppercase">
           {type}
         </div>
         {colors.split(",").map((i) => (
           <div
             key={i}
-            className="rounded-lg w-8 h-8 shadow-lg"
+            className="h-8 w-8 rounded-lg shadow-lg"
             style={{ backgroundColor: i }}
           />
         ))}
       </div>
-      <div className="text-lg md:text-xl font-medium leading-6">
+      <div className="text-lg font-medium leading-6 md:text-xl">
         {description}
       </div>
     </div>
@@ -63,7 +63,7 @@ export default function WorkDetail({ params, work }) {
       <PageHead title={`Works - ${work.name}`} />
       <section className="relative">
         <div className="sticky top-0">
-          <div className="relative h-52 md:h-96 overflow-hidden bg-primary">
+          <div className="relative h-52 overflow-hidden bg-primary md:h-96">
             {work.cover && (
               <Image
                 alt={work.name}
@@ -75,7 +75,7 @@ export default function WorkDetail({ params, work }) {
             )}
           </div>
         </div>
-        <div className="relative bg-base-100 min-h-screen">
+        <div className="relative min-h-screen bg-base-100">
           <div className="relative mx-auto max-w-3xl py-10 px-6">
             <Iconize type={work.type} />
             <Head name={work.name} />

@@ -18,7 +18,7 @@ export default function Home() {
               </div>
               <div className={styles.headingLine3}>build your own.</div>
             </h2>
-            <div className="mt-4 font-semibold text-base text-center mx-auto xl:mx-0 xl:text-left xl:text-lg max-w-md transition-all xl:block">
+            <div className="mx-auto mt-4 max-w-md text-center text-base font-semibold transition-all xl:mx-0 xl:block xl:text-left xl:text-lg">
               A frontend developer who loves{" "}
               <span className="word-underline animated">
                 &lt;CleanCode /&gt;

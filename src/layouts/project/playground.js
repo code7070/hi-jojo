@@ -6,7 +6,7 @@ const statusMap = {
 
 const ProjectInfo = ({ title, description, techStacks, status }) => {
   const TechLabel = ({ item }) => (
-    <span className="badge badge-secondary badge-sm m-1 font-semibold">
+    <span className="badge-secondary badge badge-sm m-1 font-semibold">
       {item}
     </span>
   );
@@ -16,14 +16,14 @@ const ProjectInfo = ({ title, description, techStacks, status }) => {
       <h1 className="hidden">Project</h1>
       <h2 className="projectTitle !leading-tight">{title}</h2>
       <h3 className="projectDesc">{description}</h3>
-      <div className="mt-4 text-sm pr-2">
+      <div className="mt-4 pr-2 text-sm">
         {techStacks
           ? techStacks.map((i) => <TechLabel key={i} item={i} />)
           : ""}
       </div>
       <div className="mt-4">
         <div
-          className={`badge badge-outline font-bold ${statusMap[status].label}`}
+          className={`badge-outline badge font-bold ${statusMap[status].label}`}
         >
           {statusMap[status].text}
         </div>
@@ -41,8 +41,8 @@ export default function ProjectPlayground({
 }) {
   return (
     <section>
-      <div className="relative flex flex-col-reverse lg:flex-row max-w-screen-xl mx-auto mt-16 mb-8 px-8 xl:px-0">
-        <div className="w-full lg:w-2/4 xl:w-2/5 order-2 xl:order-1 mt-12 lg:mt-0 max-w-md mx-auto lg:max-w-full">
+      <div className="relative mx-auto mt-16 mb-8 flex max-w-screen-xl flex-col-reverse px-8 lg:flex-row xl:px-0">
+        <div className="order-2 mx-auto mt-12 w-full max-w-md lg:mt-0 lg:w-2/4 lg:max-w-full xl:order-1 xl:w-2/5">
           <ProjectInfo
             title={title}
             description={description}
@@ -50,7 +50,7 @@ export default function ProjectPlayground({
             status={status}
           />
         </div>
-        <div className="w-full lg:w-2/4 xl:w-3/5 flex justify-end order-2 xl:order-1">
+        <div className="order-2 flex w-full justify-end lg:w-2/4 xl:order-1 xl:w-3/5">
           {children}
           {/* <div className="w-full max-w-2xl p-2">{children}</div> */}
         </div>

@@ -3,8 +3,8 @@ import EyeSlashIcon from "public/icons/eye-slash";
 
 const PrivateIcon = () => (
   <div className="absolute right-0 top-0 -translate-y-[100%]">
-    <div className="relative bg-error text-error-content rounded-full py-1 px-3 w-full h-full [&>svg]:w-6 [&>svg]:h-6 flex items-center justify-center ">
-      <div className="absolute w-full h-full ring ring-error opacity-30 rounded-full hover:ring-0 hover:bg-error hover:animate-ping" />
+    <div className="relative flex h-full w-full items-center justify-center rounded-full bg-error py-1 px-3 text-error-content [&>svg]:h-6 [&>svg]:w-6 ">
+      <div className="absolute h-full w-full rounded-full opacity-30 ring ring-error hover:animate-ping hover:bg-error hover:ring-0" />
       <EyeSlashIcon stroke={22} />
     </div>
   </div>
@@ -17,7 +17,7 @@ export const ColorBar = ({ colors }) => {
       {colors.slice(0, 4).map((i, index) => (
         <div
           key={index}
-          className={`w-8 h-2 border`}
+          className={`h-2 w-8 border`}
           style={{ backgroundColor: i }}
         />
       ))}
@@ -30,7 +30,7 @@ const CardPhoto = ({ colors }) => {
 
   return (
     <figure
-      className="h-[180px] relative bg-slate-100"
+      className="relative h-[180px] bg-slate-100"
       style={{ backgroundColor: colors ? colorList[0] : "" }}
     >
       <div className="absolute left-[8px] bottom-[8px]">
@@ -44,9 +44,9 @@ const CardBody = ({ name, description, stacks, navigate, isPrivate }) => {
   const stacklist = stacks?.split(",");
 
   return (
-    <div className="bg-white relative">
+    <div className="relative bg-white">
       {isPrivate && <PrivateIcon />}
-      <h3 className="font-black text-primary opacity-90 block text-xl md:text-2xl line-clamp-2">
+      <h3 className="block text-xl font-black text-primary opacity-90 line-clamp-2 md:text-2xl">
         {name}
       </h3>
       <div className="hidden md:block">
@@ -54,21 +54,21 @@ const CardBody = ({ name, description, stacks, navigate, isPrivate }) => {
           {description}
         </div>
       </div>
-      <div className="text-xs md:text-sm mt-2 font-medium tracking-wide flex flex-wrap">
+      <div className="mt-2 flex flex-wrap text-xs font-medium tracking-wide md:text-sm">
         {stacklist.map((i, index) => {
           const isLast = index + 1 === stacklist.length;
           const classComma = isLast ? "" : "after:content-[',']";
           return (
             <span
               key={i}
-              className={`opacity-30 hover:opacity-80 hover:underline mr-2 ${classComma}`}
+              className={`mr-2 opacity-30 hover:underline hover:opacity-80 ${classComma}`}
             >
               {i}
             </span>
           );
         })}
       </div>
-      <div className="mt-4 card-actions justify-end">
+      <div className="card-actions mt-4 justify-end">
         <button className="btn bg-black" onClick={navigate}>
           Details
         </button>

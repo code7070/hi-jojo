@@ -25,18 +25,18 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed left-0 top-0 right-0 bg-base-100 max-h-[68px] z-50 transition-all duration-200 ${
+      className={`fixed left-0 top-0 right-0 z-50 max-h-[68px] bg-base-100 transition-all duration-200 ${
         inWorkDetail ? "translate-y-[-100%]" : ""
       }`}
     >
       <div className="content-wrapper py-4">
-        <div className="container flex items-center justify-start h-9 gap-4">
+        <div className="container flex h-9 items-center justify-start gap-4">
           <Link href="/">
             <div
               className={`${
                 atHome
-                  ? "bg-primary text-secondary w-16"
-                  : "bg-secondary text-primary w-24"
+                  ? "w-16 bg-primary text-secondary"
+                  : "w-24 bg-secondary text-primary"
               }  ${linkClass}`}
             >
               <div style={{ verticalAlign: "middle" }}>
@@ -47,7 +47,7 @@ export default function Header() {
           <div
             className={`${
               atHome ? "w-48" : "w-32"
-            } transition-all duration-200 bg-primary h-1 mx-4 rounded-2xl hidden sm:block`}
+            } mx-4 hidden h-1 rounded-2xl bg-primary transition-all duration-200 sm:block`}
           />
           {pages.map(({ href, name }) => (
             <Link href={href} key={href} className={pageLinks(href)}>

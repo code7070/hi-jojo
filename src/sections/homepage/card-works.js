@@ -8,13 +8,13 @@ const Item = ({ name, link, year, description }) => {
     <Link href={`/works/${link}`} shallow={true} className={style.projectLink}>
       <div className={style.projectItem}>
         <div className={style.borders} />
-        <div className="relative flex justify-between items-center">
-          <div className="flex-1 line-clamp-1 pr-3 font-bold text-lg">
+        <div className="relative flex items-center justify-between">
+          <div className="flex-1 pr-3 text-lg font-bold line-clamp-1">
             {name}
           </div>
           <div className="text-xs">{year}</div>
         </div>
-        <div className="opacity-50 font-normal text-xs sm:text-sm line-clamp-1">
+        <div className="text-xs font-normal opacity-50 line-clamp-1 sm:text-sm">
           {description}
         </div>
       </div>
@@ -32,9 +32,9 @@ export default function CardProject({}) {
   const router = useRouter();
   const toWorks = () => router.push("/works", "/works", { shallow: true });
   return (
-    <div className={`${style.homeCard} ${style.left} bg-secondary  min-h-16 `}>
-      <div className="pt-6 px-6">
-        <h3 className="text-4xl font-extrabold opacity-70 mb-8">Works</h3>
+    <div className={`${style.homeCard} ${style.left} min-h-16  bg-secondary `}>
+      <div className="px-6 pt-6">
+        <h3 className="mb-8 text-4xl font-extrabold opacity-70">Works</h3>
       </div>
       <div className="mb-8">
         {projectList.slice(0, 3).map((item) => (
@@ -42,7 +42,7 @@ export default function CardProject({}) {
         ))}
       </div>
       <button
-        className="btn btn-primary bg-primary border-transparent rounded-none w-full font-bold outline-none transition-all duration-100 hover:tracking-widest active:rounded-xl"
+        className="btn-primary btn w-full rounded-none border-transparent bg-primary font-bold outline-none transition-all duration-100 hover:tracking-widest active:rounded-xl"
         onClick={toWorks}
         type="button"
       >

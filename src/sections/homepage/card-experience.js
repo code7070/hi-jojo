@@ -11,7 +11,7 @@ const chatList = [
   { text: "What stacks have u used before?", type: "start" },
   {
     text: (
-      <div className="[&>svg]:w-6 [&>svg]:h-6 flex gap-2 flex-wrap">
+      <div className="flex flex-wrap gap-2 [&>svg]:h-6 [&>svg]:w-6">
         I use <ReactIcon /> <NextJsIcon /> <TailwindIcon /> <VscodeIcon />{" "}
         <FigmaIcon />
       </div>
@@ -66,7 +66,7 @@ const ResponseView = ({ variants, setVariants, toggleFlip }) => {
   return (
     <div className="mt-8 flex justify-center gap-3">
       <button
-        className="btn btn-square btn-secondary text-xl font-black"
+        className="btn-secondary btn-square btn text-xl font-black"
         type="button"
         onClick={reload}
         disabled={varInit}
@@ -87,7 +87,7 @@ const ResponseView = ({ variants, setVariants, toggleFlip }) => {
         transition={transition(chatList.length + 1, variants)}
       >
         <button
-          className="btn btn-primary border-2 w-full !font-bold tracking-wide"
+          className="btn-primary btn w-full border-2 !font-bold tracking-wide"
           type="button"
           onClick={toggleFlip}
         >
@@ -105,10 +105,10 @@ export default function CardExperience({ toggleFlip }) {
     <div
       className={`${style.homeCard} ${style.right} bg-secondary-focus transition-all duration-500 xl:mt-10`}
     >
-      <div className="p-6 text-accent-content font-extrabold">
+      <div className="p-6 font-extrabold text-accent-content">
         <h3 className="block">
           <div className="text-4xl opacity-70">Four years</div>
-          <div className="text-2xl opacity-40 mb-6">as an UI maker</div>
+          <div className="mb-6 text-2xl opacity-40">as an UI maker</div>
         </h3>
         {chatList.map((item, index) => (
           <Bubble item={item} index={index} key={index} animate={variants} />

@@ -19,7 +19,7 @@ export default function HomeRight() {
 
   return (
     <div className={style.homeGrid}>
-      <div className="md:flex xl:gap-3 flex-wrap items-start justify-center xl:justify-end mt-14 xl:mt-0">
+      <div className="mt-14 flex-wrap items-start justify-center md:flex xl:mt-0 xl:justify-end xl:gap-3">
         <div className={style.homeCardGrid}>
           <CardProfile flip={profileFlip} toggleFlip={toggleFlip} />
           <div className="block sm:hidden">

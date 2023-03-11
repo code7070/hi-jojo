@@ -23,7 +23,7 @@ const Frontside = ({ onClick, flip }) => (
   >
     <div className="h-full">
       <div className="absolute left-0 top-0 w-full p-6 text-white">
-        <h3 className="text-5xl font-bold mb-1">Jojo</h3>
+        <h3 className="mb-1 text-5xl font-bold">Jojo</h3>
         <div className="text-xl font-semibold opacity-30">
           Frontend Developer
         </div>
@@ -61,9 +61,9 @@ const Backside = ({ onClick, flip }) => {
   const mail = "azizditya+contact@gmail.com";
   const linkedLink = "https://www.linkedin.com/in/aditya-a-332510145/";
   return (
-    <div className={`${style.homeCard} bg-secondary h-full`}>
+    <div className={`${style.homeCard} h-full bg-secondary`}>
       <div className="relative p-8">
-        <div className="font-extrabold text-2xl mb-6">Jojo</div>
+        <div className="mb-6 text-2xl font-extrabold">Jojo</div>
         <ContactRow icon={faEnvelope}>
           <LinkOffer href={`mailto:${mail}`}>{mail}</LinkOffer>
         </ContactRow>
@@ -76,7 +76,7 @@ const Backside = ({ onClick, flip }) => {
         <div className="my-8">
           <button
             type="button"
-            className="btn btn-primary btn-outline btn-circle flex-1 w-full gap-4 font-bold"
+            className="btn-outline btn-primary btn-circle btn w-full flex-1 gap-4 font-bold"
           >
             <FontAwesomeIcon icon={faFilePdf} size="lg" />
             <div>See My CV</div>

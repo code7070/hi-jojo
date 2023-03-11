@@ -10,7 +10,7 @@ const Worklet = ({ work, filter }) => {
   return (
     <div className={styles.workBox}>
       <div className={styles.media}>
-        <div className="btn btn-circle btn-sm absolute right-4 top-4">
+        <div className="btn-sm btn-circle btn absolute right-4 top-4">
           <FontAwesomeIcon
             size="lg"
             icon={work.type === "playground" ? faGamepad : faCode}
@@ -54,7 +54,7 @@ export default function WorkListDekstop({ filter, worklist = [] }) {
       ),
     ];
   return (
-    <div className="hidden sm:block max-w-3xl mx-auto">
+    <div className="mx-auto hidden max-w-3xl sm:block">
       {loops.map((w) => {
         return <WorkSection filter={filter} key={w.year} {...w} />;
       })}

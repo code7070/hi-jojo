@@ -14,7 +14,7 @@ export const list = [
 
 const Desktop = ({ filter, setFilter }) => {
   return (
-    <div className="hidden sm:flex btn-group w-full">
+    <div className="btn-group hidden w-full sm:flex">
       {list.map((i) => (
         <button
           key={i.name}
@@ -55,18 +55,18 @@ const Mobile = ({ filter, setFilter }) => {
   return (
     <div className="block sm:hidden">
       <div
-        className={`mx-auto block dropdown w-64 ${open ? "dropdown-open" : ""}`}
+        className={`dropdown mx-auto block w-64 ${open ? "dropdown-open" : ""}`}
       >
         <button
           type="button"
-          className="btn m-1 block mx-auto"
+          className="btn m-1 mx-auto block"
           onClick={toggleDrop}
           onBlur={closeDrop}
         >
           <FontAwesomeIcon icon={filter.icon} className="mr-2" />
           {filter.name}
         </button>
-        <ul className="left-[50%] translate-x-[-50%] block dropdown-content menu p-2 shadow bg-white rounded-box w-52">
+        <ul className="dropdown-content menu rounded-box left-[50%] block w-52 translate-x-[-50%] bg-white p-2 shadow">
           {list.map((i) => (
             <li key={i.name}>
               <button
@@ -89,7 +89,7 @@ const Mobile = ({ filter, setFilter }) => {
 
 export default function WorkFilter({ filter, setFilter }) {
   return (
-    <div className="my-10 sm:my-24 max-w-xs mx-auto">
+    <div className="my-10 mx-auto max-w-xs sm:my-24">
       <Desktop filter={filter} setFilter={setFilter} />
       <Mobile filter={filter} setFilter={setFilter} />
     </div>
