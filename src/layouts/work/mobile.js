@@ -20,7 +20,7 @@ const WorkPart = ({ work, open, setOpen, filter }) => {
       <button className={classer(styles.btnHead)} onClick={toggle}>
         <div className="flex-1 line-clamp-1">{work.name}</div>
         <div className="flex items-center">
-          <div className="btn-primary btn-sm btn-circle btn mr-4">
+          <div className="btn btn-primary btn-sm btn-circle mr-4">
             <FontAwesomeIcon
               icon={work.type === "playground" ? faGamepad : faCode}
               size="lg"

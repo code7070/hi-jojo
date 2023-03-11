@@ -25,7 +25,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed left-0 top-0 right-0 z-50 max-h-[68px] bg-base-100 transition-all duration-200 ${
+      className={`fixed inset-x-0 top-0 z-50 max-h-[68px] bg-base-100 transition-all duration-200 ${
         inWorkDetail ? "translate-y-[-100%]" : ""
       }`}
     >

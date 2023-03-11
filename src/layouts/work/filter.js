@@ -72,7 +72,7 @@ const Mobile = ({ filter, setFilter }) => {
               <button
                 type="button"
                 className="flex capitalize"
-                onClick={(e) => {
+                onClick={() => {
                   setFilter(i);
                   closeDrop();
                 }}

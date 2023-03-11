@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import EyeSlashIcon from "public/icons/eye-slash";
 
 const PrivateIcon = () => (
-  <div className="absolute right-0 top-0 -translate-y-[100%]">
+  <div className="absolute right-0 top-0 translate-y-[-100%]">
     <div className="relative flex h-full w-full items-center justify-center rounded-full bg-error py-1 px-3 text-error-content [&>svg]:h-6 [&>svg]:w-6 ">
       <div className="absolute h-full w-full rounded-full opacity-30 ring ring-error hover:animate-ping hover:bg-error hover:ring-0" />
       <EyeSlashIcon stroke={22} />
@@ -89,7 +89,7 @@ export default function ProjectCard({
   colors,
 }) {
   let evenClass = "md:translate-x-[60%]";
-  if (isEven) evenClass = "md:-translate-x-[60%]";
+  if (isEven) evenClass = "md:translate-x-[-60%]";
   const noFirstClass = isFirst ? "" : "md:-mt-44";
 
   const { push } = useRouter();
