@@ -6,6 +6,7 @@ import { fetchFavWorks } from "@utils/worklist";
 export async function getStaticProps() {
   return {
     props: { favowork: await fetchFavWorks() },
+    revalidate: 60,
   };
 }
 

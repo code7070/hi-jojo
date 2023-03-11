@@ -8,7 +8,10 @@ import { useState } from "react";
 import { fetchWorkList } from "@utils/worklist";
 
 export async function getStaticProps() {
-  return { props: { worklist: await fetchWorkList() } };
+  return {
+    props: { worklist: await fetchWorkList() },
+    revalidate: 60,
+  };
 }
 
 export default function WorkPage({ worklist = [] }) {

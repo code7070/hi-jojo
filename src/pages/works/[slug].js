@@ -45,6 +45,7 @@ export async function getStaticProps({ params }) {
   worklist.map((w) => w.works.map((x) => (x.link === params.slug ? work.push(x) : null)));
   return {
     props: { params, work: work[0] },
+    revalidate: 60,
   };
 }
 
