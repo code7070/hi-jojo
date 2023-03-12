@@ -6,6 +6,9 @@ import Footer from "@components/footer/footer";
 import "nprogress/nprogress.css";
 import "@styles/globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import "react-notion-x/src/styles.css";
+import "@styles/notion/duper-style-default.scss";
+import "@styles/notion/duper-style-stylish.scss";
 
 const font = Font({
   subsets: ["latin"],
@@ -23,9 +26,7 @@ export default function App({ Component, pageProps }) {
   const spacer = inWorkDetail ? "pt-[0px]" : "pt-[70px]";
   return (
     <>
-      <main
-        className={`${font.className} transition-all duration-200 ${spacer}`}
-      >
+      <main className={`${font.className} transition-all duration-200 ${spacer}`}>
         <div className="top-ornament" />
         <Component {...pageProps} />
       </main>

@@ -1,0 +1,20 @@
+.duper-notion.duper-pages.duper-style-stylish,
+.duper-notion.duper-blocks.duper-style-stylish {
+  @apply rounded-xl bg-accent p-8 text-white transition-all duration-200;
+
+  .h1,
+  .heading_1 {
+    @apply mt-6 mb-4 text-3xl font-extrabold;
+    @apply italic;
+  }
+
+  .p,
+  .paragraph {
+    @apply my-4 text-lg font-semibold;
+    @apply italic;
+  }
+
+  * {
+    @apply transition-all duration-200;
+  }
+}
