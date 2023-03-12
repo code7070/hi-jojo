@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const BlockMapper = ({ type = "", ...block }) => {
   const value = block[type].rich_text[0].plain_text;
