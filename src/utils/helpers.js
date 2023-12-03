@@ -64,7 +64,17 @@ export const getNotion = {
     let value = null;
 
     if (type === "select") value = target.name;
-    else if (target) {
+    else if (type === "date") {
+      const poop = properties.date?.start || null;
+      const date = poop ? new Date(poop) : new Date();
+      // value = properties.date?.start || null;
+      value = {
+        year: date?.getFullYear(),
+        month: date?.getMonth() + 1,
+        date: date?.getDate(),
+        full: poop,
+      };
+    } else if (target) {
       const hasLength = target.length > 0;
       value = hasLength ? target[0].plain_text : null;
     }

@@ -24,9 +24,7 @@ const Frontside = ({ onClick, flip }) => (
     <div className="h-full">
       <div className="absolute left-0 top-0 w-full p-6 text-white">
         <h3 className="mb-1 text-5xl font-bold">Jojo</h3>
-        <div className="text-xl font-semibold opacity-30">
-          Frontend Developer
-        </div>
+        <div className="text-xl font-semibold opacity-30">Frontend Developer</div>
       </div>
       <div className="absolute left-0 bottom-[36px] w-full opacity-90 [&>img]:w-full">
         <Image
@@ -63,8 +61,17 @@ const LinkOffer = ({ children, href }) => (
 );
 
 const Backside = ({ onClick, flip }) => {
-  const mail = "azizditya+contact@gmail.com";
+  const mail = "masjojo@live.com";
   const linkedLink = "https://www.linkedin.com/in/aditya-a-332510145/";
+  const openCv = () => {
+    const now = new Date().getTime();
+    if (window) {
+      window.open(
+        `https://drive.google.com/file/d/1MqZEE7oOkbH2CjlgvgVEYmSqVqwClT0A/view?usp=sharing&from=hi-jojo&time=${now}`,
+        "_blank"
+      );
+    }
+  };
   return (
     <div className={`${style.homeCard} h-full bg-secondary`}>
       <div className="relative p-8">
@@ -81,10 +88,11 @@ const Backside = ({ onClick, flip }) => {
         <div className="my-8">
           <button
             type="button"
-            className="btn-outline btn btn-primary btn-circle w-full flex-1 gap-4 font-bold"
+            className="btn-outline btn-primary btn-circle btn w-full flex-1 gap-4 font-bold"
+            onClick={openCv}
           >
             <FontAwesomeIcon icon={faFilePdf} size="lg" />
-            <div>See My CV</div>
+            <div>See &nbsp;Resume</div>
           </button>
         </div>
       </div>

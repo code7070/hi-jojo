@@ -1,16 +1,16 @@
 import PageHead from "./PageHead";
 import styles from "@styles/home.module.scss";
 import HomeRight from "src/sections/homepage/home-right";
-import { fetchFavWorks } from "@utils/worklist";
+import { fetchFavWorks, fetchWork } from "@utils/worklist";
 
 export async function getStaticProps() {
   return {
-    props: { favowork: await fetchFavWorks() },
+    props: { favowork: await fetchFavWorks(), works: await fetchWork() },
     revalidate: 60,
   };
 }
 
-export default function Home({ favowork }) {
+export default function Home({ favowork, works }) {
   return (
     <>
       <PageHead />
@@ -34,7 +34,7 @@ export default function Home({ favowork }) {
               <span className="word-underline animated">awe-some-thing</span>.
             </div>
           </div>
-          <HomeRight favowork={favowork} />
+          <HomeRight favowork={favowork} works={works} />
         </div>
       </div>
     </>

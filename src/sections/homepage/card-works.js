@@ -4,21 +4,29 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 const Item = ({ name, link, year, description }) => {
+  let view = (
+    <div className={style.projectItem}>
+      <div className={style.borders} />
+      <div className="relative flex items-center justify-between">
+        <div className="flex-1 pr-3 text-lg font-bold line-clamp-1">{name}</div>
+        <div className="text-xs">{year}</div>
+      </div>
+      <div className="text-xs font-normal opacity-50 line-clamp-1 sm:text-sm">
+        {description}
+      </div>
+    </div>
+  );
+
+  if (!link) return <div className={style.projectLink}>{view}</div>;
+
   return (
     <Link href={`/works/${link}`} shallow={true} className={style.projectLink}>
-      <div className={style.projectItem}>
-        <div className={style.borders} />
-        <div className="relative flex items-center justify-between">
-          <div className="flex-1 pr-3 text-lg font-bold line-clamp-1">{name}</div>
-          <div className="text-xs">{year}</div>
-        </div>
-        <div className="text-xs font-normal opacity-50 line-clamp-1 sm:text-sm">
-          {description}
-        </div>
-      </div>
+      {view}
     </Link>
   );
 };
+
+export const WorkItem = Item;
 
 export default function CardProject({ favowork }) {
   const router = useRouter();
@@ -26,7 +34,7 @@ export default function CardProject({ favowork }) {
   return (
     <div className={`${style.homeCard} ${style.left} min-h-16  bg-secondary `}>
       <div className="px-6 pt-6">
-        <h3 className="mb-8 text-4xl font-extrabold opacity-70">Works</h3>
+        <h3 className="mb-8 text-4xl font-extrabold opacity-70">Projects</h3>
       </div>
       <div className="mb-8">
         {favowork.map((item) => (

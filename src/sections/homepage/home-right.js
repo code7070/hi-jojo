@@ -5,8 +5,9 @@ import CardStories from "./card-stories";
 import CardExperience from "./card-experience";
 import CardProfile from "./card-profile";
 import CardWorks from "./card-works";
+import CardWork from "./card-work";
 
-export default function HomeRight({ favowork }) {
+export default function HomeRight({ favowork, works }) {
   const [profileFlip, setProfileFlip] = useState(false);
 
   const toggleFlip = () => {
@@ -26,11 +27,13 @@ export default function HomeRight({ favowork }) {
             <CardExperience toggleFlip={toggleFlip} />
           </div>
           <div className="hidden sm:block">
+            <CardWork works={works} />
             <CardWorks favowork={favowork} />
           </div>
         </div>
         <div className={`${style.homeCardGrid} mt-10 xl:mt-0`}>
           <div className="block sm:hidden">
+            <CardWork works={works} />
             <CardWorks favowork={favowork} />
           </div>
           <div className="hidden sm:block">

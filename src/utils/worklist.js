@@ -157,6 +157,22 @@ const workList = [
   },
 ];
 
+export const fetchWork = async () => {
+  const { results } = await notionConnection.databases.query({
+    database_id: "45767681f6ba4670a21f1dfa0a74ec71",
+    sorts: [{ property: "From", direction: "descending" }],
+  });
+
+  const data = results?.map((item) => ({
+    name: getNotion.dbValues(item.properties.Name),
+    from: getNotion.dbValues(item.properties.From),
+    to: getNotion.dbValues(item.properties.To),
+    as: getNotion.dbValues(item.properties.as),
+  }));
+
+  return data;
+};
+
 export const fetchFavWorks = async () => {
   const { results } = await notionConnection.databases.query({
     database_id: "38f9913ed88b4cd7a4c88b3851d4ad03",
